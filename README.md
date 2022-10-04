@@ -59,5 +59,5 @@ Propuesta de valor agregado:
 Se utilizo el evento Mouse Hover para indicar los errores cuando se ingresa un dato, pasando el mouse encima del boton de error te muestra el error.
 
 
-
+Gracias.
 
