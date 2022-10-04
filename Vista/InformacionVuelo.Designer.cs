@@ -29,6 +29,7 @@ namespace Vista
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformacionVuelo));
             this.chb_comida = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.chb_wifi = new System.Windows.Forms.CheckBox();
@@ -46,6 +47,7 @@ namespace Vista
             this.btn_salir = new System.Windows.Forms.Button();
             this.lbl_errorCantidadPasajeros = new System.Windows.Forms.Label();
             this.btn_finalizarVuelo = new System.Windows.Forms.Button();
+            this.btn_Info = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadDePasajeros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_infoGeneral)).BeginInit();
             this.SuspendLayout();
@@ -221,6 +223,20 @@ namespace Vista
             this.btn_finalizarVuelo.UseVisualStyleBackColor = true;
             this.btn_finalizarVuelo.Click += new System.EventHandler(this.btn_finalizarVuelo_Click);
             // 
+            // btn_Info
+            // 
+            this.btn_Info.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Info.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Info.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Info.BackgroundImage")));
+            this.btn_Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_Info.Location = new System.Drawing.Point(800, 39);
+            this.btn_Info.Name = "btn_Info";
+            this.btn_Info.Size = new System.Drawing.Size(35, 35);
+            this.btn_Info.TabIndex = 38;
+            this.btn_Info.UseVisualStyleBackColor = false;
+            this.btn_Info.Click += new System.EventHandler(this.btn_Info_Click);
+            // 
             // InformacionVuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -229,6 +245,7 @@ namespace Vista
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(847, 494);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_Info);
             this.Controls.Add(this.btn_finalizarVuelo);
             this.Controls.Add(this.lbl_errorCantidadPasajeros);
             this.Controls.Add(this.btn_salir);
@@ -276,5 +293,6 @@ namespace Vista
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.Label lbl_errorCantidadPasajeros;
         private System.Windows.Forms.Button btn_finalizarVuelo;
+        private System.Windows.Forms.Button btn_Info;
     }
 }

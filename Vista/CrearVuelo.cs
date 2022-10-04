@@ -313,10 +313,9 @@ namespace Vista
             toolTip1.SetToolTip(this.btn_errorFechaSalida, "La fecha seleccionada debe ser Mayor o igual a la actual");
         }
 
-        private void btn_Info_MouseHover(object sender, EventArgs e)
+        private void btn_Info_Click(object sender, EventArgs e)
         {
-            ToolTip toolTip1 = new ToolTip();
-            toolTip1.SetToolTip(this.btn_errorFechaSalida, "1-Debe cargar los datos correspondiente al vuelo \n2-seleccione el boton generar");
+            MessageBox.Show("1-Debe cargar los datos correspondiente al vuelo \n2-seleccione el boton generar\n3-aprete el boton aceptar○\n4-Si algun campo no fue completado correctamente se visualizara el boton de error, \n en el cual posando el mouse arriba le indicara que corregir");
         }
     }
 }

@@ -111,5 +111,10 @@ namespace Vista
                 }
             }
         }
+
+        private void btn_Info_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1-Debe cargar los datos correspondiente al la carga de tarjeta o efectivo \n2-seleccione el boton aceptar\n3-Si algun campo no fue completado correctamente se visualizara el boton de error, \n en el cual posando el mouse arriba le indicara que corregir");
+        }
     }
 }

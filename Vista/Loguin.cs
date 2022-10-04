@@ -46,5 +46,10 @@ namespace Vista
             txb_usuario.Text = "40333444";
             txb_clave.Text = "123";
         }
+
+        private void btn_Info_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1-Debe cargar los datos correspondiente al Vendedor \n2-aprete el boton ingresar\n3-Si algun campo no fue completado correctamente se visualizara un mensaje de error");
+        }
     }
 }

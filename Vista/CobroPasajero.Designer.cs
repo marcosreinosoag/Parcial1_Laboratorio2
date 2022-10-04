@@ -29,6 +29,7 @@ namespace Vista
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CobroPasajero));
             this.lbl_codSeg = new System.Windows.Forms.Label();
             this.lbl_fechaVto = new System.Windows.Forms.Label();
             this.txb_anio = new System.Windows.Forms.TextBox();
@@ -44,6 +45,7 @@ namespace Vista
             this.txb_totalCuenta = new System.Windows.Forms.TextBox();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_aceptar = new System.Windows.Forms.Button();
+            this.btn_Info = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_codSeg
@@ -195,6 +197,20 @@ namespace Vista
             this.btn_aceptar.UseVisualStyleBackColor = true;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
+            // btn_Info
+            // 
+            this.btn_Info.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Info.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Info.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Info.BackgroundImage")));
+            this.btn_Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_Info.Location = new System.Drawing.Point(531, 12);
+            this.btn_Info.Name = "btn_Info";
+            this.btn_Info.Size = new System.Drawing.Size(35, 35);
+            this.btn_Info.TabIndex = 31;
+            this.btn_Info.UseVisualStyleBackColor = false;
+            this.btn_Info.Click += new System.EventHandler(this.btn_Info_Click);
+            // 
             // CobroPasajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -203,6 +219,7 @@ namespace Vista
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(603, 365);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_Info);
             this.Controls.Add(this.lbl_codSeg);
             this.Controls.Add(this.lbl_fechaVto);
             this.Controls.Add(this.txb_anio);
@@ -244,5 +261,6 @@ namespace Vista
         private System.Windows.Forms.TextBox txb_totalCuenta;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_aceptar;
+        private System.Windows.Forms.Button btn_Info;
     }
 }

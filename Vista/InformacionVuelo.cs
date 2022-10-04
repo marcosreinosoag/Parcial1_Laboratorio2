@@ -84,5 +84,10 @@ namespace Vista
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void btn_Info_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1- seleccionando los botones pasajeros o equipaje se informara en pantalla lo indicado \n2-Si la cantidad ingresada de pasajeros es la correspondiente seleccione el boton cargar pasajeros y lo llevara al una pestaña para cargar los pasajeros solicitados\n3-aprete el boton finalizar para cerrar el vuelo\n4-Cancelar para salir");
+        }
     }
 }

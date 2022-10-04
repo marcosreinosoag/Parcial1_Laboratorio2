@@ -29,6 +29,7 @@ namespace Vista
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.lbl_fecha = new System.Windows.Forms.Label();
             this.lbl_nombreUsuario = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -47,6 +48,7 @@ namespace Vista
             this.btn_vendedorMayorEdad = new System.Windows.Forms.Button();
             this.lbl_error = new System.Windows.Forms.Label();
             this.btn_pasajeroMasViejes = new System.Windows.Forms.Button();
+            this.btn_Info = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_infoGeneral)).BeginInit();
             this.SuspendLayout();
@@ -208,6 +210,20 @@ namespace Vista
             this.btn_pasajeroMasViejes.UseVisualStyleBackColor = true;
             this.btn_pasajeroMasViejes.Click += new System.EventHandler(this.btn_pasajeroMasViejes_Click);
             // 
+            // btn_Info
+            // 
+            this.btn_Info.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Info.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Info.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Info.BackgroundImage")));
+            this.btn_Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_Info.Location = new System.Drawing.Point(753, 475);
+            this.btn_Info.Name = "btn_Info";
+            this.btn_Info.Size = new System.Drawing.Size(35, 35);
+            this.btn_Info.TabIndex = 24;
+            this.btn_Info.UseVisualStyleBackColor = false;
+            this.btn_Info.Click += new System.EventHandler(this.btn_Info_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -216,6 +232,7 @@ namespace Vista
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 522);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_Info);
             this.Controls.Add(this.btn_pasajeroMasViejes);
             this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.btn_vendedorMayorEdad);
@@ -257,5 +274,6 @@ namespace Vista
         private System.Windows.Forms.Label lbl_error;
         private System.Windows.Forms.ToolStripMenuItem vendedoresToolStripMenuItem1;
         private System.Windows.Forms.Button btn_pasajeroMasViejes;
+        private System.Windows.Forms.Button btn_Info;
     }
 }

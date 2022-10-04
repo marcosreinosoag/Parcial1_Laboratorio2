@@ -37,6 +37,7 @@ namespace Vista
             this.btn_autocompletar = new System.Windows.Forms.Button();
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.lbl_error = new System.Windows.Forms.Label();
+            this.btn_Info = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txb_usuario
@@ -106,6 +107,20 @@ namespace Vista
             this.lbl_error.Size = new System.Drawing.Size(0, 15);
             this.lbl_error.TabIndex = 6;
             // 
+            // btn_Info
+            // 
+            this.btn_Info.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Info.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Info.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Info.BackgroundImage")));
+            this.btn_Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_Info.Location = new System.Drawing.Point(813, 12);
+            this.btn_Info.Name = "btn_Info";
+            this.btn_Info.Size = new System.Drawing.Size(35, 35);
+            this.btn_Info.TabIndex = 32;
+            this.btn_Info.UseVisualStyleBackColor = false;
+            this.btn_Info.Click += new System.EventHandler(this.btn_Info_Click);
+            // 
             // Loguin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -114,6 +129,7 @@ namespace Vista
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(909, 463);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_Info);
             this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.lbl_titulo);
             this.Controls.Add(this.btn_autocompletar);
@@ -139,6 +155,7 @@ namespace Vista
         private System.Windows.Forms.Button btn_autocompletar;
         private System.Windows.Forms.Label lbl_titulo;
         private System.Windows.Forms.Label lbl_error;
+        private System.Windows.Forms.Button btn_Info;
     }
 }
 

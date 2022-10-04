@@ -141,5 +141,10 @@ namespace Vista
             auxPasajero = Volarg.DevolverPasajeroConMasViajes();
             MessageBox.Show(auxPasajero.MostrarDatos());
         }
+
+        private void btn_Info_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1-Seleccionando los botones del menu de la parte superior vera la informacion correspondiente \n2-realice doble click sobre el vuelo que desea ingresar\n3-aprete el boton Salir para finalizar el programa");
+        }
     }
 }

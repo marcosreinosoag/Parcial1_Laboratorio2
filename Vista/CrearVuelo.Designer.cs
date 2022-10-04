@@ -320,12 +320,13 @@ namespace Vista
             this.btn_Info.BackColor = System.Drawing.Color.Transparent;
             this.btn_Info.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Info.BackgroundImage")));
             this.btn_Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btn_Info.Location = new System.Drawing.Point(476, 22);
             this.btn_Info.Name = "btn_Info";
             this.btn_Info.Size = new System.Drawing.Size(35, 35);
             this.btn_Info.TabIndex = 23;
             this.btn_Info.UseVisualStyleBackColor = false;
-            this.btn_Info.MouseHover += new System.EventHandler(this.btn_Info_MouseHover);
+            this.btn_Info.Click += new System.EventHandler(this.btn_Info_Click);
             // 
             // CrearVuelo
             // 

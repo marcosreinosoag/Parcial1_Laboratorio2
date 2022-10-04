@@ -91,6 +91,7 @@ namespace Vista
             this.txb_peso2 = new System.Windows.Forms.TextBox();
             this.btn_cargarEquipaje = new System.Windows.Forms.Button();
             this.lbx_pasajesCargados = new System.Windows.Forms.ListBox();
+            this.btn_Info = new System.Windows.Forms.Button();
             this.gbx_cargaPasajeros.SuspendLayout();
             this.gbx_equipajeMano.SuspendLayout();
             this.gbx_equipajeBodega1.SuspendLayout();
@@ -825,6 +826,20 @@ namespace Vista
             this.lbx_pasajesCargados.Size = new System.Drawing.Size(542, 94);
             this.lbx_pasajesCargados.TabIndex = 57;
             // 
+            // btn_Info
+            // 
+            this.btn_Info.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Info.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Info.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Info.BackgroundImage")));
+            this.btn_Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_Info.Location = new System.Drawing.Point(880, 396);
+            this.btn_Info.Name = "btn_Info";
+            this.btn_Info.Size = new System.Drawing.Size(35, 35);
+            this.btn_Info.TabIndex = 58;
+            this.btn_Info.UseVisualStyleBackColor = false;
+            this.btn_Info.Click += new System.EventHandler(this.btn_Info_Click);
+            // 
             // VenderPasaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -833,6 +848,7 @@ namespace Vista
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(927, 552);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_Info);
             this.Controls.Add(this.lbx_pasajesCargados);
             this.Controls.Add(this.btn_cargarEquipaje);
             this.Controls.Add(this.gbx_equipajeBodega2);
@@ -920,5 +936,6 @@ namespace Vista
         private System.Windows.Forms.Label lbl_error;
         private System.Windows.Forms.ListBox lbx_pasajesCargados;
         private System.Windows.Forms.Button btn_buscarPasajero;
+        private System.Windows.Forms.Button btn_Info;
     }
 }

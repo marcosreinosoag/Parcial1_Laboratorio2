@@ -564,5 +564,10 @@ namespace Vista
             Button btn_generico = (Button)sender;
             toolTip1.SetToolTip(btn_generico, "¡La fecha de nacimiento debe ser menor a la actual!");
         }
+
+        private void btn_Info_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1-Debe cargar los datos correspondiente al pasajero y equipaje si corresponde \n2-seleccione el boton cargar pasajero y cargar equipaje\n3-Si algun campo no fue completado correctamente se visualizara el boton de error");
+        }
     }
 }
