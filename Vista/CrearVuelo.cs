@@ -25,6 +25,8 @@ namespace Vista
             CargarOrigenNacional();
             CargarDestinoNacional();
             CargarAvionesDisponibles();
+            cmb_origen.SelectedIndex = 1;
+            cmb_destino.SelectedIndex = 2;
         }
         private void chx_internacional_CheckedChanged(object sender, EventArgs e)
         {
@@ -35,14 +37,19 @@ namespace Vista
                 cmb_destino.Text = null;
                 CargarDestinoInternacional();
                 CargarOrigenInternacional();
+                cmb_origen.SelectedIndex = 1;
+                cmb_destino.SelectedIndex = 2;
             }
             else
             {
+                cmb_origen.Enabled = true;
                 vueloInternacional = false;
                 cmb_origen.Text = null;
                 cmb_destino.Text = null;
                 CargarDestinoNacional();
                 CargarOrigenNacional();
+                cmb_origen.SelectedIndex = 1;
+                cmb_destino.SelectedIndex = 2;
             }
         }
         private void btn_generarDuracion_Click(object sender, EventArgs e)
@@ -61,16 +68,22 @@ namespace Vista
             if (vueloInternacional)
             {
                 CargarDestinoInternacional();
-                if (cmb_origen.SelectedItem != null)
+                if (cmb_origen.Text == "BuenosAires")
                 {
-                    cmb_origen.Items.Remove(cmb_destino.SelectedItem);
+                    //cmb_origen.SelectedItem = ELugar.BuenosAires;
+                    cmb_origen.Enabled = false;
+                    cmb_destino.Enabled = true;
+                }
+                else
+                {
+                    cmb_destino.Text = "BuenosAires";
+                    cmb_destino.Enabled = false;
                 }
             }
             else
             {
                 CargarDestinoNacional();
-                ELugar aux = (ELugar)cmb_origen.SelectedItem;
-                cmb_destino.Items.Remove(aux);
+
             }
         }
         private void cmb_destino_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,31 +91,37 @@ namespace Vista
             LimpiarCampos();
             if (vueloInternacional)
             {
-                //CargarOrigenInternacional();
-                //cmb_destino.Items.RemoveAt(cmb_origen.SelectedIndex);
-            }
-            else
-            {
-                CargarOrigenNacional();
-                ELugar aux = (ELugar)cmb_destino.SelectedItem;
-                cmb_origen.Items.Remove(aux);
+                if (cmb_destino.Text == "BuenosAires")
+                {
+
+                    cmb_destino.Enabled = false;
+                    cmb_origen.Enabled = true;
+                }
+                else
+                {
+                    cmb_origen.Text = "BuenosAires";
+                    cmb_origen.Enabled = false;
+                }
+
             }
         }
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
             Vuelo auxVuelo;
-            Aereonave auxAereonave;
-            if (ValidarDatos(this.cmb_avionAsignado.Text, txt_duracionVuelo.Text, this.dtp_horaDeSalida.Value, this.dtp_horaDeLlegada.Value, this.cmb_origen.Text, this.cmb_destino.Text) == 6)
+            if (ValidarDatos(this.cmb_avionAsignado.Text, txt_duracionVuelo.Text, this.dtp_horaDeSalida.Value, this.dtp_horaDeLlegada.Value, this.cmb_origen.SelectedIndex, this.cmb_destino.SelectedIndex) == 6)
             {
                 ELugar lugarOrigen = (ELugar)this.cmb_origen.SelectedItem;
                 ELugar lugarDestino = (ELugar)this.cmb_destino.SelectedItem;
                 int duracion;
                 int.TryParse(txt_duracionVuelo.Text, out duracion);////funcion
-                auxAereonave = Volarg.BuscarAvionPorMatricula(cmb_avionAsignado.Text);
-                auxVuelo = new Vuelo(Vuelo.GenerarId(), auxAereonave, duracion, this.dtp_horaDeSalida.Value, this.dtp_horaDeLlegada.Value, lugarOrigen, lugarDestino, this.wifi, this.comida, this.vueloInternacional);
+                int indiceAvion;
+                indiceAvion = Volarg.BuscarIndiceAvionPorMatricula(cmb_avionAsignado.Text);
+                auxVuelo = new Vuelo(Vuelo.GenerarId(), true, Volarg.listaDeAviones[indiceAvion], duracion, this.dtp_horaDeSalida.Value, this.dtp_horaDeLlegada.Value, lugarOrigen, lugarDestino, this.wifi, this.comida, this.vueloInternacional, 0);
                 if (auxVuelo != null)
                 {
                     Volarg.CargaDeVuelo(auxVuelo);
+                    Volarg.listaDeAviones[indiceAvion].HorasDeVuelo = duracion;
+                    Volarg.listaDeAviones[indiceAvion].Disponible = false;
                     this.DialogResult = DialogResult.OK;
                 }
             }
@@ -117,7 +136,7 @@ namespace Vista
         /// <param name="origen"></param>
         /// <param name="destino"></param>
         /// <returns>Retorna 5 si salio todo bien, sino presenta en pantalla donde estuvo el error</returns>
-        private int ValidarDatos(string avionAsignado, string duracion, DateTime fechaDeSalida, DateTime fechaDeLlegada, string origen, string destino)
+        private int ValidarDatos(string avionAsignado, string duracion, DateTime fechaDeSalida, DateTime fechaDeLlegada, int origen, int destino)
         {
             int retorno = 6;
             this.btn_errorItemAvion.Visible = false;
@@ -129,7 +148,7 @@ namespace Vista
             if (Validar.ValidarString(avionAsignado) == null)
             {
                 retorno -= 1;
-                
+
                 this.btn_errorItemAvion.Visible = true;
             }
             if (Validar.ValidarStringSoloNumeros(duracion, 1) == null)
@@ -147,35 +166,19 @@ namespace Vista
                 this.btn_errorFechaLlegada.Visible = true;
                 retorno -= 1;
             }
-            if (Validar.ValidarString(origen) == null)
+            if (origen == destino)
             {
                 retorno -= 1;
                 this.btn_errorItemOrigen.Visible = true;
             }
-            if (Validar.ValidarString(destino) == null)
+            if (destino == origen)
             {
                 retorno -= 1;
                 this.btn_errorItemDestino.Visible = true;
             }
             return retorno;
         }
-        private void btn_errorItemAvion_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip toolTip1 = new ToolTip();
-            Button boton = (Button)sender;
-            toolTip1.SetToolTip(boton, "¡Seleccione un item!");
-        }
-        private void btn_errorDuracion_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip toolTip1 = new ToolTip();
-            Button boton = (Button)sender;
-            toolTip1.SetToolTip(boton, "Seleccione el boton Calcular duracion");
-        }
-        private void btn_errorFechaSalida_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip toolTip1 = new ToolTip();
-            toolTip1.SetToolTip(this.btn_errorFechaSalida, "La fecha seleccionada debe ser Mayor o igual a la actual");
-        }
+
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -279,6 +282,41 @@ namespace Vista
             }
         }
 
+        private void btn_errorItemAvion_MouseHover_1(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            Button boton = (Button)sender;
+            toolTip1.SetToolTip(boton, "¡Selccione un avion!");
+        }
 
+        private void btn_errorItemDestino_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            Button boton = (Button)sender;
+            toolTip1.SetToolTip(boton, "¡El destino no puede ser igual al origen!");
+        }
+        private void btn_errorItemAvion_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            Button boton = (Button)sender;
+            toolTip1.SetToolTip(boton, "¡Seleccione un item!");
+        }
+        private void btn_errorDuracion_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            Button boton = (Button)sender;
+            toolTip1.SetToolTip(boton, "Seleccione el boton Calcular duracion");
+        }
+        private void btn_errorFechaSalida_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.SetToolTip(this.btn_errorFechaSalida, "La fecha seleccionada debe ser Mayor o igual a la actual");
+        }
+
+        private void btn_Info_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.SetToolTip(this.btn_errorFechaSalida, "1-Debe cargar los datos correspondiente al vuelo \n2-seleccione el boton generar");
+        }
     }
 }

@@ -49,7 +49,7 @@ namespace Entidades
         {
             lastId = 1000;
         }
-        public Vuelo(int id, Aereonave avionAsignado, double duracionVuelo, DateTime horaDeSalida, DateTime horaDeLlegada, ELugar origen, ELugar destino, bool wifi, bool comida, bool internacional)
+        public Vuelo(int id,bool enVigencia, Aereonave avionAsignado, double duracionVuelo, DateTime horaDeSalida, DateTime horaDeLlegada, ELugar origen, ELugar destino, bool wifi, bool comida, bool internacional, double recaudacionTotal)
         {
             lastId = id;
             this.id = id;
@@ -63,8 +63,8 @@ namespace Entidades
             this.wifi = wifi;
             this.comida = comida;
             this.internacional = internacional;
-            this.recaudacionTotal = 0;
-            enVigencia = true;
+            this.recaudacionTotal = recaudacionTotal;
+            this.enVigencia = enVigencia;
         }
         public static double CalcularDuracionDeVuelo(bool vueloInternacional)
         {
@@ -160,6 +160,19 @@ namespace Entidades
         public override string ToString()
         {
             return id.ToString();
+        }
+        public override bool Equals(object obj)
+        {
+            Vuelo vuelo = obj as Vuelo;
+            if (vuelo is not null)
+            {
+                return vuelo.id == this.id;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return (id).GetHashCode();
         }
     }
 }

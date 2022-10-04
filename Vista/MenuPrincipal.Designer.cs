@@ -41,10 +41,12 @@ namespace Vista
             this.listaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gananciasTotalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aereonavesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_salir = new System.Windows.Forms.Button();
             this.dtg_infoGeneral = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_vendedorMayorEdad = new System.Windows.Forms.Button();
             this.lbl_error = new System.Windows.Forms.Label();
+            this.btn_pasajeroMasViejes = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_infoGeneral)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +118,8 @@ namespace Vista
             this.listaDeDestinosToolStripMenuItem,
             this.listaDeToolStripMenuItem,
             this.gananciasTotalesToolStripMenuItem,
-            this.aereonavesToolStripMenuItem});
+            this.aereonavesToolStripMenuItem,
+            this.vendedoresToolStripMenuItem1});
             this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
             this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.estadisticasToolStripMenuItem.Text = "Estadisticas";
@@ -148,6 +151,13 @@ namespace Vista
             this.aereonavesToolStripMenuItem.Text = "Aereonaves";
             this.aereonavesToolStripMenuItem.Click += new System.EventHandler(this.aereonavesToolStripMenuItem_Click);
             // 
+            // vendedoresToolStripMenuItem1
+            // 
+            this.vendedoresToolStripMenuItem1.Name = "vendedoresToolStripMenuItem1";
+            this.vendedoresToolStripMenuItem1.Size = new System.Drawing.Size(227, 22);
+            this.vendedoresToolStripMenuItem1.Text = "Vendedores";
+            this.vendedoresToolStripMenuItem1.Click += new System.EventHandler(this.vendedoresToolStripMenuItem1_Click);
+            // 
             // btn_salir
             // 
             this.btn_salir.Location = new System.Drawing.Point(12, 456);
@@ -168,15 +178,16 @@ namespace Vista
             this.dtg_infoGeneral.TabIndex = 9;
             this.dtg_infoGeneral.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // button1
+            // btn_vendedorMayorEdad
             // 
-            this.button1.Location = new System.Drawing.Point(637, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 34);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
+            this.btn_vendedorMayorEdad.Location = new System.Drawing.Point(637, 36);
+            this.btn_vendedorMayorEdad.Name = "btn_vendedorMayorEdad";
+            this.btn_vendedorMayorEdad.Size = new System.Drawing.Size(126, 49);
+            this.btn_vendedorMayorEdad.TabIndex = 10;
+            this.btn_vendedorMayorEdad.Text = "Vendedor Con mayor edad";
+            this.btn_vendedorMayorEdad.UseVisualStyleBackColor = true;
+            this.btn_vendedorMayorEdad.Visible = false;
+            this.btn_vendedorMayorEdad.Click += new System.EventHandler(this.btn_vendedorMayorEdad_Click);
             // 
             // lbl_error
             // 
@@ -187,6 +198,16 @@ namespace Vista
             this.lbl_error.Size = new System.Drawing.Size(0, 15);
             this.lbl_error.TabIndex = 11;
             // 
+            // btn_pasajeroMasViejes
+            // 
+            this.btn_pasajeroMasViejes.Location = new System.Drawing.Point(442, 36);
+            this.btn_pasajeroMasViejes.Name = "btn_pasajeroMasViejes";
+            this.btn_pasajeroMasViejes.Size = new System.Drawing.Size(133, 48);
+            this.btn_pasajeroMasViejes.TabIndex = 12;
+            this.btn_pasajeroMasViejes.Text = "Pasajero con mas viajes";
+            this.btn_pasajeroMasViejes.UseVisualStyleBackColor = true;
+            this.btn_pasajeroMasViejes.Click += new System.EventHandler(this.btn_pasajeroMasViejes_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -195,8 +216,9 @@ namespace Vista
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 522);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_pasajeroMasViejes);
             this.Controls.Add(this.lbl_error);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_vendedorMayorEdad);
             this.Controls.Add(this.dtg_infoGeneral);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.lbl_nombreUsuario);
@@ -231,7 +253,9 @@ namespace Vista
         private System.Windows.Forms.ToolStripMenuItem listaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gananciasTotalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aereonavesToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_vendedorMayorEdad;
         private System.Windows.Forms.Label lbl_error;
+        private System.Windows.Forms.ToolStripMenuItem vendedoresToolStripMenuItem1;
+        private System.Windows.Forms.Button btn_pasajeroMasViejes;
     }
 }

@@ -89,14 +89,16 @@ namespace Vista
         }
         private void listaDeDestinosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dtg_infoGeneral.DataSource = Volarg.listaDeVuelos;
+            List<Vuelo> auxVuelos = Volarg.DevolverListaDeVuelosOrdenada();
+            dtg_infoGeneral.DataSource = auxVuelos;
             dtg_infoGeneral.Enabled = false;
             ActualizarEnableMenuTripAviones();
         }
 
         private void listaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dtg_infoGeneral.DataSource = Volarg.listaHistorialPasajeros;
+            List<Pasajero> auxPasajero = Volarg.listaHistorialPasajeros;
+            dtg_infoGeneral.DataSource = auxPasajero;
             dtg_infoGeneral.Enabled = false;
             ActualizarEnableMenuTripAviones();
         }
@@ -116,6 +118,28 @@ namespace Vista
         {
             aereonavesToolStripMenuItem.Enabled = true;
             avionesToolStripMenuItem.Enabled = true;
+        }
+
+        private void vendedoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dtg_infoGeneral.DataSource = Volarg.listaDeVendedores;
+            dtg_infoGeneral.Enabled = false;
+            btn_vendedorMayorEdad.Visible = true;
+            ActualizarEnableMenuTripAviones();
+        }
+
+        private void btn_vendedorMayorEdad_Click(object sender, EventArgs e)
+        {
+            Vendedor auxVendedor;
+            auxVendedor = Volarg.DevolverVendedorMayorEdad();
+            MessageBox.Show(auxVendedor.MostrarDatos());
+        }
+
+        private void btn_pasajeroMasViejes_Click(object sender, EventArgs e)
+        {
+            Pasajero auxPasajero;
+            auxPasajero = Volarg.DevolverPasajeroConMasViajes();
+            MessageBox.Show(auxPasajero.MostrarDatos());
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Entidades
         }
         public override string ToString()
         {
-            return edad.ToString();
+            return $"{this.Nombre} \n {this.Apellido} \n {this. edad.ToString()}";
         }
         public int Edad
         {
@@ -32,7 +32,7 @@ namespace Entidades
         }
         public override string MostrarDatos()
         {
-            return "hola";
+            return this.ToString();
         }
         public int AsientoAsignado
         {
@@ -44,6 +44,19 @@ namespace Entidades
             {
                 this.asientoAsignado = value;
             }
+        }
+        public override bool Equals(object obj)
+        {
+            Pasajero pasajero = obj as Pasajero;
+            if (pasajero is not null)
+            {
+                return pasajero.Dni == this.Dni;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return (Dni).GetHashCode();
         }
     }
 }

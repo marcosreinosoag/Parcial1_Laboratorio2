@@ -24,10 +24,6 @@ namespace Entidades
             this.DeMano = deMano;
             this.Descripcion = descripcion;
         }
-        public override string ToString()
-        {
-            return descripcion.ToString();
-        }
         public string Color
         {
             get { return color; }
@@ -69,6 +65,23 @@ namespace Entidades
         {
             get { return descripcion; }
             set { descripcion = value; }
+        }
+        public override string ToString()
+        {
+            return descripcion.ToString();
+        }
+        public override bool Equals(object obj)
+        {
+            Equipaje equipaje = obj as Equipaje;
+            if (equipaje is not null)
+            {
+                return equipaje.descripcion == this.descripcion;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return (descripcion).GetHashCode();
         }
     }
 }

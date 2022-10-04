@@ -19,10 +19,7 @@ namespace Entidades
             this.apellido = apellido;
             this.fechaDeNacimiento = fechaDeNacimiento;
         }
-        public override string ToString()
-        {
-            return dni.ToString();
-        }
+        
         public string Dni
         {
             get { return this.dni; }
@@ -40,5 +37,24 @@ namespace Entidades
             get { return fechaDeNacimiento; }
         }
         public abstract string MostrarDatos();
+
+        public override string ToString()
+        {
+            return dni.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            Persona persona = obj as Persona;
+            if (persona is not null)
+            {
+                return persona.dni == this.dni;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return (Dni).GetHashCode();
+        }
     }
 }

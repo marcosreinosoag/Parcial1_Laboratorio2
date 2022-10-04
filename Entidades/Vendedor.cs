@@ -31,11 +31,25 @@ namespace Entidades
         }
         public override string MostrarDatos()
         {
-            return "hola2";
+            return this.ToString();
         }
         public override string ToString()
         {
-            return usuario.ToString();
+            int edad = DateTime.Now.Year - FechaDeNacimiento.Year;
+            return $"{this.Nombre} \n {this.Apellido} \n {edad.ToString()}";
+        }
+        public override bool Equals(object obj)
+        {
+            Vendedor vendedor = obj as Vendedor;
+            if (vendedor is not null)
+            {
+                return vendedor.usuario == this.usuario;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return (usuario,clave).GetHashCode();
         }
     }
 }

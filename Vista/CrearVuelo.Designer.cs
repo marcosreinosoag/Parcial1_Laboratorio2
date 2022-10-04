@@ -53,6 +53,7 @@ namespace Vista
             this.btn_errorDuracion = new System.Windows.Forms.Button();
             this.btn_errorFechaSalida = new System.Windows.Forms.Button();
             this.btn_errorFechaLlegada = new System.Windows.Forms.Button();
+            this.btn_Info = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // chx_internacional
@@ -241,6 +242,7 @@ namespace Vista
             this.btn_errorItemOrigen.TabIndex = 17;
             this.btn_errorItemOrigen.UseVisualStyleBackColor = false;
             this.btn_errorItemOrigen.Visible = false;
+            this.btn_errorItemOrigen.MouseHover += new System.EventHandler(this.btn_errorItemDestino_MouseHover);
             // 
             // btn_errorItemAvion
             // 
@@ -254,6 +256,7 @@ namespace Vista
             this.btn_errorItemAvion.TabIndex = 18;
             this.btn_errorItemAvion.UseVisualStyleBackColor = false;
             this.btn_errorItemAvion.Visible = false;
+            this.btn_errorItemAvion.MouseHover += new System.EventHandler(this.btn_errorItemAvion_MouseHover_1);
             // 
             // btn_errorItemDestino
             // 
@@ -267,6 +270,7 @@ namespace Vista
             this.btn_errorItemDestino.TabIndex = 19;
             this.btn_errorItemDestino.UseVisualStyleBackColor = false;
             this.btn_errorItemDestino.Visible = false;
+            this.btn_errorItemDestino.MouseHover += new System.EventHandler(this.btn_errorItemDestino_MouseHover);
             // 
             // btn_errorDuracion
             // 
@@ -280,6 +284,7 @@ namespace Vista
             this.btn_errorDuracion.TabIndex = 20;
             this.btn_errorDuracion.UseVisualStyleBackColor = false;
             this.btn_errorDuracion.Visible = false;
+            this.btn_errorDuracion.MouseHover += new System.EventHandler(this.btn_errorDuracion_MouseHover);
             // 
             // btn_errorFechaSalida
             // 
@@ -293,6 +298,7 @@ namespace Vista
             this.btn_errorFechaSalida.TabIndex = 21;
             this.btn_errorFechaSalida.UseVisualStyleBackColor = false;
             this.btn_errorFechaSalida.Visible = false;
+            this.btn_errorFechaSalida.MouseHover += new System.EventHandler(this.btn_errorFechaSalida_MouseHover);
             // 
             // btn_errorFechaLlegada
             // 
@@ -306,6 +312,20 @@ namespace Vista
             this.btn_errorFechaLlegada.TabIndex = 22;
             this.btn_errorFechaLlegada.UseVisualStyleBackColor = false;
             this.btn_errorFechaLlegada.Visible = false;
+            this.btn_errorFechaLlegada.MouseHover += new System.EventHandler(this.btn_errorDuracion_MouseHover);
+            // 
+            // btn_Info
+            // 
+            this.btn_Info.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Info.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Info.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Info.BackgroundImage")));
+            this.btn_Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Info.Location = new System.Drawing.Point(476, 22);
+            this.btn_Info.Name = "btn_Info";
+            this.btn_Info.Size = new System.Drawing.Size(35, 35);
+            this.btn_Info.TabIndex = 23;
+            this.btn_Info.UseVisualStyleBackColor = false;
+            this.btn_Info.MouseHover += new System.EventHandler(this.btn_Info_MouseHover);
             // 
             // CrearVuelo
             // 
@@ -315,6 +335,7 @@ namespace Vista
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(534, 429);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_Info);
             this.Controls.Add(this.btn_errorFechaLlegada);
             this.Controls.Add(this.btn_errorFechaSalida);
             this.Controls.Add(this.btn_errorDuracion);
@@ -372,5 +393,6 @@ namespace Vista
         private System.Windows.Forms.Button btn_errorDuracion;
         private System.Windows.Forms.Button btn_errorFechaSalida;
         private System.Windows.Forms.Button btn_errorFechaLlegada;
+        private System.Windows.Forms.Button btn_Info;
     }
 }

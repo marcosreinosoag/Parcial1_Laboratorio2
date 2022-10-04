@@ -31,10 +31,6 @@ namespace Entidades
         {
             pasajerosEnAvion = pasajeros;
         }
-        public override string ToString()
-        {
-            return matricula.ToString();
-        }
         public Pasajero[] PasajerosEnAvion
         {
             get { return this.pasajerosEnAvion; }
@@ -67,6 +63,7 @@ namespace Entidades
         public double HorasDeVuelo
         {
             get { return horasDeVuelo; }
+            set { horasDeVuelo += value; }
         }
         public void ResetearListas()
         {
@@ -167,6 +164,23 @@ namespace Entidades
                 cantidadDeAsientosPremium = cantidadDeAsientosEnAvion * 0.2;
             }
             return (int)cantidadDeAsientosPremium;
+        }
+        public override string ToString()
+        {
+            return matricula.ToString();
+        }
+        public override bool Equals(object obj)
+        {
+            Aereonave aereonave = obj as Aereonave;
+            if (aereonave is not null)
+            {
+                return aereonave.matricula == this.matricula;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return (matricula).GetHashCode();
         }
     }
 }

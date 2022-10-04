@@ -55,10 +55,20 @@ namespace Entidades
         private static void CargaListaDeVuelos()
         {
             listaDeVuelos = new List<Vuelo>();
-            double duracion = Vuelo.CalcularDuracionDeVuelo(true);
+            double duracionInternacional = Vuelo.CalcularDuracionDeVuelo(true);
+            double duracionNacional = Vuelo.CalcularDuracionDeVuelo(false);
             DateTime horaSalidaVuelo1 = new DateTime(2022, 12, 12, 00, 00, 00);
-            Vuelo vueloUno = new Vuelo(Vuelo.GenerarId(), listaDeAviones[0], duracion, horaSalidaVuelo1, horaSalidaVuelo1.AddHours(8), ELugar.BuenosAires, ELugar.Miami, true, true, true);
+            Vuelo vueloUno = new Vuelo(Vuelo.GenerarId(),true, listaDeAviones[0], duracionInternacional, horaSalidaVuelo1, horaSalidaVuelo1.AddHours(8), ELugar.BuenosAires, ELugar.Miami, true, true, true,3000);
+            Vuelo vueloDos = new Vuelo(Vuelo.GenerarId(),false, listaDeAviones[2], duracionNacional, horaSalidaVuelo1, horaSalidaVuelo1.AddHours(2), ELugar.BuenosAires, ELugar.Bariloche, true, true, false,15000);
+            Vuelo vueloTres = new Vuelo(Vuelo.GenerarId(),false, listaDeAviones[5], duracionNacional, horaSalidaVuelo1, horaSalidaVuelo1.AddHours(3), ELugar.Cordoba, ELugar.Jujuy, true, false, false,10000);
+            Vuelo vueloCuatro = new Vuelo(Vuelo.GenerarId(),false, listaDeAviones[3], duracionNacional, horaSalidaVuelo1, horaSalidaVuelo1.AddHours(4), ELugar.Corrientes, ELugar.Jujuy, true, false, false,10000);
+            Vuelo vueloCinco = new Vuelo(Vuelo.GenerarId(),false, listaDeAviones[3], duracionNacional, horaSalidaVuelo1, horaSalidaVuelo1.AddHours(2), ELugar.Corrientes, ELugar.Jujuy, false, true, false,3500);
             listaDeVuelos.Add(vueloUno);
+            listaDeVuelos.Add(vueloDos);
+            listaDeVuelos.Add(vueloTres);
+            listaDeVuelos.Add(vueloCuatro);
+            listaDeVuelos.Add(vueloCinco);
+
         }
         private static void CargaListaDeVendedores()
         {
@@ -125,18 +135,74 @@ namespace Entidades
             listaDeAviones.Add(avionSeis);
             listaDeAviones.Add(avionSiete);
         }
-        public static Aereonave BuscarAvionPorMatricula(string matriculaAvion)
+        public static int BuscarIndiceAvionPorMatricula(string matriculaAvion)
         {
-            Aereonave auxAvion = null;
+            int indice = -1;
             foreach (Aereonave item in listaDeAviones)
             {
                 if (item.Matricula == matriculaAvion)
                 {
-                    auxAvion = item;
-                    return auxAvion;
+                    indice = listaDeAviones.IndexOf(item);
+                    return indice;
                 }
             }
-            return auxAvion;
+            return indice;
+        }
+        public static Pasajero DevolverPasajeroConMasViajes()
+        {
+            Pasajero auxPasajeroMasViajes = null;
+            int i = 0;
+            foreach (Pasajero item in listaHistorialPasajeros)
+            {
+                if (i == 0)
+                {
+                    auxPasajeroMasViajes = item;
+                    i++;
+                }
+                if (item.ViajesRealizados > auxPasajeroMasViajes.ViajesRealizados)
+                {
+                    auxPasajeroMasViajes = item;
+                }
+            }
+            return auxPasajeroMasViajes;
+        }
+        public static Vendedor DevolverVendedorMayorEdad()
+        {
+            Vendedor auxVendedorMayorEdad = null;
+            int i = 0;
+            foreach (Vendedor item in listaDeVendedores)
+            {
+                if (i == 0)
+                {
+                    auxVendedorMayorEdad = item;
+                    i++;
+                }
+                if (DateTime.Compare(item.FechaDeNacimiento, auxVendedorMayorEdad.FechaDeNacimiento) < 0)
+                {
+                    auxVendedorMayorEdad = item;
+                }
+            }
+            return auxVendedorMayorEdad;
+        }
+        public static List<Vuelo> DevolverListaDeVuelosOrdenada()
+        {
+            List<Vuelo> auxListaVuelos = Volarg.listaDeVuelos;
+            auxListaVuelos.Sort(CompararVuelosPorRecaudacionTotal);
+            return auxListaVuelos;
+        }
+        static int CompararVuelosPorRecaudacionTotal(Vuelo vuelo1, Vuelo vuelo2)
+        {
+            return (int)vuelo1.RecaudacionTotal + (int)vuelo2.RecaudacionTotal;
+        }
+        public static List<Pasajero> DevolverListaDePasajerosOrdenada()
+        {
+            List<Pasajero> auxListaPasajeros = Volarg.listaHistorialPasajeros;
+            auxListaPasajeros.Sort(CompararPasajerosPorCantidadDeVuelos);
+            return auxListaPasajeros;
+        }
+        static int CompararPasajerosPorCantidadDeVuelos(Pasajero a, Pasajero b)
+        {
+            return a.ViajesRealizados - b.ViajesRealizados;
         }
     }
 }
