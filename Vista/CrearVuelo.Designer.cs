@@ -29,6 +29,7 @@ namespace Vista
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearVuelo));
             this.chx_internacional = new System.Windows.Forms.CheckBox();
             this.cmb_avionAsignado = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,14 +45,21 @@ namespace Vista
             this.txt_duracionVuelo = new System.Windows.Forms.TextBox();
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.chb_wifi = new System.Windows.Forms.CheckBox();
+            this.chb_comida = new System.Windows.Forms.CheckBox();
+            this.btn_errorItemOrigen = new System.Windows.Forms.Button();
+            this.btn_errorItemAvion = new System.Windows.Forms.Button();
+            this.btn_errorItemDestino = new System.Windows.Forms.Button();
+            this.btn_errorDuracion = new System.Windows.Forms.Button();
+            this.btn_errorFechaSalida = new System.Windows.Forms.Button();
+            this.btn_errorFechaLlegada = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // chx_internacional
             // 
             this.chx_internacional.AutoSize = true;
             this.chx_internacional.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chx_internacional.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.chx_internacional.Location = new System.Drawing.Point(9, 66);
             this.chx_internacional.Name = "chx_internacional";
             this.chx_internacional.Size = new System.Drawing.Size(141, 19);
@@ -62,6 +70,7 @@ namespace Vista
             // 
             // cmb_avionAsignado
             // 
+            this.cmb_avionAsignado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_avionAsignado.FormattingEnabled = true;
             this.cmb_avionAsignado.Location = new System.Drawing.Point(135, 22);
             this.cmb_avionAsignado.Name = "cmb_avionAsignado";
@@ -71,7 +80,8 @@ namespace Vista
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 25);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(24, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 15);
             this.label1.TabIndex = 2;
@@ -79,6 +89,7 @@ namespace Vista
             // 
             // cmb_origen
             // 
+            this.cmb_origen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_origen.FormattingEnabled = true;
             this.cmb_origen.Location = new System.Drawing.Point(135, 106);
             this.cmb_origen.Name = "cmb_origen";
@@ -89,6 +100,7 @@ namespace Vista
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(64, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 15);
@@ -98,6 +110,7 @@ namespace Vista
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.Location = new System.Drawing.Point(64, 168);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 15);
@@ -106,6 +119,7 @@ namespace Vista
             // 
             // cmb_destino
             // 
+            this.cmb_destino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_destino.FormattingEnabled = true;
             this.cmb_destino.Location = new System.Drawing.Point(135, 160);
             this.cmb_destino.Name = "cmb_destino";
@@ -115,7 +129,7 @@ namespace Vista
             // 
             // dtp_horaDeSalida
             // 
-            this.dtp_horaDeSalida.Location = new System.Drawing.Point(135, 218);
+            this.dtp_horaDeSalida.Location = new System.Drawing.Point(135, 211);
             this.dtp_horaDeSalida.Name = "dtp_horaDeSalida";
             this.dtp_horaDeSalida.Size = new System.Drawing.Size(291, 23);
             this.dtp_horaDeSalida.TabIndex = 7;
@@ -123,7 +137,8 @@ namespace Vista
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 224);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(15, 217);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 15);
             this.label4.TabIndex = 8;
@@ -132,6 +147,7 @@ namespace Vista
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(19, 312);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 15);
@@ -147,11 +163,11 @@ namespace Vista
             this.dtp_horaDeLlegada.Name = "dtp_horaDeLlegada";
             this.dtp_horaDeLlegada.Size = new System.Drawing.Size(291, 23);
             this.dtp_horaDeLlegada.TabIndex = 10;
-            this.dtp_horaDeLlegada.Value = new System.DateTime(2022, 9, 25, 0, 0, 0, 0);
+            this.dtp_horaDeLlegada.Value = new System.DateTime(1997, 9, 25, 0, 0, 0, 0);
             // 
             // btn_generarDuracion
             // 
-            this.btn_generarDuracion.Location = new System.Drawing.Point(19, 269);
+            this.btn_generarDuracion.Location = new System.Drawing.Point(15, 264);
             this.btn_generarDuracion.Name = "btn_generarDuracion";
             this.btn_generarDuracion.Size = new System.Drawing.Size(110, 23);
             this.btn_generarDuracion.TabIndex = 11;
@@ -162,14 +178,14 @@ namespace Vista
             // txt_duracionVuelo
             // 
             this.txt_duracionVuelo.Enabled = false;
-            this.txt_duracionVuelo.Location = new System.Drawing.Point(135, 269);
+            this.txt_duracionVuelo.Location = new System.Drawing.Point(135, 264);
             this.txt_duracionVuelo.Name = "txt_duracionVuelo";
             this.txt_duracionVuelo.Size = new System.Drawing.Size(291, 23);
             this.txt_duracionVuelo.TabIndex = 12;
             // 
             // btn_aceptar
             // 
-            this.btn_aceptar.Location = new System.Drawing.Point(362, 383);
+            this.btn_aceptar.Location = new System.Drawing.Point(378, 365);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(92, 31);
             this.btn_aceptar.TabIndex = 13;
@@ -179,7 +195,7 @@ namespace Vista
             // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(61, 383);
+            this.btn_cancelar.Location = new System.Drawing.Point(77, 365);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(91, 31);
             this.btn_cancelar.TabIndex = 14;
@@ -187,35 +203,126 @@ namespace Vista
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // checkBox1
+            // chb_wifi
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.Location = new System.Drawing.Point(103, 349);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(47, 19);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Wifi";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chb_wifi.AutoSize = true;
+            this.chb_wifi.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chb_wifi.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chb_wifi.Location = new System.Drawing.Point(195, 66);
+            this.chb_wifi.Name = "chb_wifi";
+            this.chb_wifi.Size = new System.Drawing.Size(47, 19);
+            this.chb_wifi.TabIndex = 15;
+            this.chb_wifi.Text = "Wifi";
+            this.chb_wifi.UseVisualStyleBackColor = true;
+            this.chb_wifi.CheckedChanged += new System.EventHandler(this.chb_wifi_CheckedChanged);
             // 
-            // checkBox2
+            // chb_comida
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox2.Location = new System.Drawing.Point(204, 349);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(68, 19);
-            this.checkBox2.TabIndex = 16;
-            this.checkBox2.Text = "Comida";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chb_comida.AutoSize = true;
+            this.chb_comida.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chb_comida.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chb_comida.Location = new System.Drawing.Point(296, 66);
+            this.chb_comida.Name = "chb_comida";
+            this.chb_comida.Size = new System.Drawing.Size(68, 19);
+            this.chb_comida.TabIndex = 16;
+            this.chb_comida.Text = "Comida";
+            this.chb_comida.UseVisualStyleBackColor = true;
+            this.chb_comida.CheckedChanged += new System.EventHandler(this.chb_comida_CheckedChanged);
+            // 
+            // btn_errorItemOrigen
+            // 
+            this.btn_errorItemOrigen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_errorItemOrigen.BackColor = System.Drawing.Color.Black;
+            this.btn_errorItemOrigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_errorItemOrigen.Image = ((System.Drawing.Image)(resources.GetObject("btn_errorItemOrigen.Image")));
+            this.btn_errorItemOrigen.Location = new System.Drawing.Point(430, 100);
+            this.btn_errorItemOrigen.Name = "btn_errorItemOrigen";
+            this.btn_errorItemOrigen.Size = new System.Drawing.Size(38, 35);
+            this.btn_errorItemOrigen.TabIndex = 17;
+            this.btn_errorItemOrigen.UseVisualStyleBackColor = false;
+            this.btn_errorItemOrigen.Visible = false;
+            // 
+            // btn_errorItemAvion
+            // 
+            this.btn_errorItemAvion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_errorItemAvion.BackColor = System.Drawing.Color.Black;
+            this.btn_errorItemAvion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_errorItemAvion.Image = ((System.Drawing.Image)(resources.GetObject("btn_errorItemAvion.Image")));
+            this.btn_errorItemAvion.Location = new System.Drawing.Point(432, 15);
+            this.btn_errorItemAvion.Name = "btn_errorItemAvion";
+            this.btn_errorItemAvion.Size = new System.Drawing.Size(38, 35);
+            this.btn_errorItemAvion.TabIndex = 18;
+            this.btn_errorItemAvion.UseVisualStyleBackColor = false;
+            this.btn_errorItemAvion.Visible = false;
+            // 
+            // btn_errorItemDestino
+            // 
+            this.btn_errorItemDestino.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_errorItemDestino.BackColor = System.Drawing.Color.Black;
+            this.btn_errorItemDestino.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_errorItemDestino.Image = ((System.Drawing.Image)(resources.GetObject("btn_errorItemDestino.Image")));
+            this.btn_errorItemDestino.Location = new System.Drawing.Point(432, 153);
+            this.btn_errorItemDestino.Name = "btn_errorItemDestino";
+            this.btn_errorItemDestino.Size = new System.Drawing.Size(38, 35);
+            this.btn_errorItemDestino.TabIndex = 19;
+            this.btn_errorItemDestino.UseVisualStyleBackColor = false;
+            this.btn_errorItemDestino.Visible = false;
+            // 
+            // btn_errorDuracion
+            // 
+            this.btn_errorDuracion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_errorDuracion.BackColor = System.Drawing.Color.Black;
+            this.btn_errorDuracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_errorDuracion.Image = ((System.Drawing.Image)(resources.GetObject("btn_errorDuracion.Image")));
+            this.btn_errorDuracion.Location = new System.Drawing.Point(432, 258);
+            this.btn_errorDuracion.Name = "btn_errorDuracion";
+            this.btn_errorDuracion.Size = new System.Drawing.Size(38, 35);
+            this.btn_errorDuracion.TabIndex = 20;
+            this.btn_errorDuracion.UseVisualStyleBackColor = false;
+            this.btn_errorDuracion.Visible = false;
+            // 
+            // btn_errorFechaSalida
+            // 
+            this.btn_errorFechaSalida.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_errorFechaSalida.BackColor = System.Drawing.Color.Black;
+            this.btn_errorFechaSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_errorFechaSalida.Image = ((System.Drawing.Image)(resources.GetObject("btn_errorFechaSalida.Image")));
+            this.btn_errorFechaSalida.Location = new System.Drawing.Point(430, 207);
+            this.btn_errorFechaSalida.Name = "btn_errorFechaSalida";
+            this.btn_errorFechaSalida.Size = new System.Drawing.Size(38, 35);
+            this.btn_errorFechaSalida.TabIndex = 21;
+            this.btn_errorFechaSalida.UseVisualStyleBackColor = false;
+            this.btn_errorFechaSalida.Visible = false;
+            // 
+            // btn_errorFechaLlegada
+            // 
+            this.btn_errorFechaLlegada.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_errorFechaLlegada.BackColor = System.Drawing.Color.Black;
+            this.btn_errorFechaLlegada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_errorFechaLlegada.Image = ((System.Drawing.Image)(resources.GetObject("btn_errorFechaLlegada.Image")));
+            this.btn_errorFechaLlegada.Location = new System.Drawing.Point(432, 302);
+            this.btn_errorFechaLlegada.Name = "btn_errorFechaLlegada";
+            this.btn_errorFechaLlegada.Size = new System.Drawing.Size(38, 35);
+            this.btn_errorFechaLlegada.TabIndex = 22;
+            this.btn_errorFechaLlegada.UseVisualStyleBackColor = false;
+            this.btn_errorFechaLlegada.Visible = false;
             // 
             // CrearVuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 456);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(534, 429);
+            this.ControlBox = false;
+            this.Controls.Add(this.btn_errorFechaLlegada);
+            this.Controls.Add(this.btn_errorFechaSalida);
+            this.Controls.Add(this.btn_errorDuracion);
+            this.Controls.Add(this.btn_errorItemDestino);
+            this.Controls.Add(this.btn_errorItemAvion);
+            this.Controls.Add(this.btn_errorItemOrigen);
+            this.Controls.Add(this.chb_comida);
+            this.Controls.Add(this.chb_wifi);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.txt_duracionVuelo);
@@ -232,7 +339,8 @@ namespace Vista
             this.Controls.Add(this.cmb_avionAsignado);
             this.Controls.Add(this.chx_internacional);
             this.Name = "CrearVuelo";
-            this.Text = "AgregarVuelo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Agregar Vuelo";
             this.Load += new System.EventHandler(this.AgregarVuelo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -256,7 +364,13 @@ namespace Vista
         private System.Windows.Forms.TextBox txt_duracionVuelo;
         private System.Windows.Forms.Button btn_aceptar;
         private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox chb_wifi;
+        private System.Windows.Forms.CheckBox chb_comida;
+        private System.Windows.Forms.Button btn_errorItemOrigen;
+        private System.Windows.Forms.Button btn_errorItemAvion;
+        private System.Windows.Forms.Button btn_errorItemDestino;
+        private System.Windows.Forms.Button btn_errorDuracion;
+        private System.Windows.Forms.Button btn_errorFechaSalida;
+        private System.Windows.Forms.Button btn_errorFechaLlegada;
     }
 }

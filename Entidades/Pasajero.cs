@@ -6,37 +6,20 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Pasajero
+    public class Pasajero : Persona
     {
-        string dni;
-        string nombre;
-        string apellido;
-        DateTime fechaDeNacimiento;
         int edad;
         int viajesRelizados;
-        public Pasajero(string nombre, string apellido, string dni, DateTime fechaDeNacimiento)
+        int asientoAsignado;
+        public Pasajero(string nombre, string apellido, string dni, DateTime fechaDeNacimiento, int asientoAsignado, int viajesRelizados) : base(dni, nombre, apellido, fechaDeNacimiento)
         {
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.dni = dni;
-            this.fechaDeNacimiento = fechaDeNacimiento;
             this.edad = DateTime.Now.Year - fechaDeNacimiento.Year;
+            this.asientoAsignado = asientoAsignado;
+            this.viajesRelizados = viajesRelizados;
         }
-        public string Dni
+        public override string ToString()
         {
-            get { return this.dni; }
-        }
-        public string Nombre
-        {
-            get { return this.nombre; }
-        }
-        public string Apellido
-        {
-            get { return apellido; }
-        }
-        public DateTime FechaDeNacimiento
-        {
-            get { return fechaDeNacimiento; }
+            return edad.ToString();
         }
         public int Edad
         {
@@ -45,6 +28,23 @@ namespace Entidades
         public int ViajesRealizados
         {
             get { return viajesRelizados; }
+            set { this.viajesRelizados += value; }
+        }
+        public override string MostrarDatos()
+        {
+            return "hola";
+        }
+        public int AsientoAsignado
+        {
+            get
+            {
+                return this.asientoAsignado;
+            }
+            set
+            {
+                this.asientoAsignado = value;
+            }
         }
     }
 }
+

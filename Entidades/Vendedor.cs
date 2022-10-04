@@ -6,27 +6,19 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Vendedor
+    public class Vendedor : Persona
     {
         string usuario;
         string clave;
-        string nombre;
-        string apellido;
 
-        public Vendedor(string usuario, string clave, string nombre, string apellido)
+        public Vendedor(string dni, string clave, string nombre, string apellido, DateTime fechaNacimiento) : base(dni, nombre, apellido, fechaNacimiento)
         {
-            this.usuario = usuario;
+            this.usuario = dni;
             this.clave = clave;
-            this.nombre = nombre;
-            this.apellido = apellido;
         }
         public string Usuario
         {
             get { return this.usuario; }
-        }
-        public string Nombre
-        {
-            get { return this.nombre; }
         }
         public bool VerificarClave(string clave)
         {
@@ -37,6 +29,13 @@ namespace Entidades
             }
             return retorno;
         }
-
+        public override string MostrarDatos()
+        {
+            return "hola2";
+        }
+        public override string ToString()
+        {
+            return usuario.ToString();
+        }
     }
 }

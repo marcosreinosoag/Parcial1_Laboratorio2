@@ -31,9 +31,14 @@ namespace Vista
 
             if (Volarg.VerificarUsuarioYClave(usuarioIngresado, claveIngresada))
             {
-                string nombreDelVendedor = Volarg.DevolverNombreUsuario(usuarioIngresado);
+                string nombreDelVendedor = Volarg.DevolverNombreVendedor(usuarioIngresado);
                 MenuPrincipal frm_menuPrincipal = new MenuPrincipal(nombreDelVendedor);
                 frm_menuPrincipal.Show();
+                this.Hide();
+            }
+            else
+            {
+                lbl_error.Text = "Datos Incorrectos";
             }
         }
         private void btn_autocompletar_Click(object sender, EventArgs e)

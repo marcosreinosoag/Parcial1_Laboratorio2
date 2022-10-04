@@ -23,50 +23,99 @@ namespace Vista
         {
             lbl_fecha.Text = DateTime.Now.Date.ToShortDateString();
             lbl_nombreUsuario.Text = "Bienvenido " + nombre;
-            dtg_informacion.DataSource = Volarg.listaDeVuelos;
+            dtg_infoGeneral.DataSource = Volarg.listaDeVuelos;
         }
-        private void btn_crearVuelo_Click(object sender, EventArgs e)
+
+        private void crearVueloToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
             CrearVuelo frm_agregarVuelo = new CrearVuelo();
             resultado = frm_agregarVuelo.ShowDialog();
             if (resultado == DialogResult.OK)
             {
+                dtg_infoGeneral.DataSource = null;
+                dtg_infoGeneral.DataSource = Volarg.listaDeVuelos;
+            }
+            ActualizarEnableMenuTripAviones();
+        }
+        private void vuelosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dtg_infoGeneral.DataSource = Volarg.listaDeVuelos;
+            dtg_infoGeneral.Enabled = true;
+            ActualizarEnableMenuTripAviones();
+        }
+        private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dtg_infoGeneral.DataSource = Volarg.listaDeVendedores;
+            dtg_infoGeneral.Enabled = false;
+            ActualizarEnableMenuTripAviones();
+        }
+        private void avionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            avionesToolStripMenuItem.Enabled = false;
+            List<Aereonave> auxListaAviones = Volarg.listaDeAviones;
+            dtg_infoGeneral.DataSource = auxListaAviones;
+            dtg_infoGeneral.Columns.RemoveAt(0);
+            dtg_infoGeneral.Enabled = false;
+        }
 
-            }
-        }
-        private void btn_vendedores_Click(object sender, EventArgs e)
+        private void btn_salir_Click(object sender, EventArgs e)
         {
-            dtg_informacion.DataSource = Volarg.listaDeVendedores;
+            Application.Exit();
         }
-        private void btn_vuelos_Click(object sender, EventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            dtg_informacion.DataSource = Volarg.listaDeVuelos;
-        }
-        private void dtg_informacion_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int indice = dtg_informacion.CurrentCell.RowIndex;
-            VenderPasaje frm_venderPasaje = new VenderPasaje(Volarg.listaDeVuelos[indice]);
-            DialogResult resultado = frm_venderPasaje.ShowDialog();
-            if (resultado == DialogResult.OK)
+            int indice = dtg_infoGeneral.CurrentCell.RowIndex;
+            InformacionVuelo frm_informacionVuelo = new InformacionVuelo(Volarg.listaDeVuelos[indice], Volarg.listaDeVuelos[indice].AvionAsignado);
+            if (Volarg.listaDeVuelos[indice].Envigencia == true)
             {
-                //if (auxMesa[this.indiceDeMesa].Ocupada == false)//funcion
-                //{
-                //    pedidos = new List<Consumo>();
-                //    Bar.CargarMesa(this.indiceDeMesa, pedidos);
-                //    MenuPrincipal.estadoMesas();
-                //}
-                //cantidad = frm_ingresoDeCantidad.CantidadIngresada;
-                //if (cantidad > 0)
-                //{
-                //    for (int i = 0; i < cantidad; i++)
-                //    {
-                //        this.pedidos.Add(nuevoConsumo);
-                //    }
-                //    CargarListaPedidosEnLista();
-                //    auxMesa[this.indiceDeMesa].Pedidos = this.pedidos;
-                //}
+                DialogResult resultado = frm_informacionVuelo.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    ActualizarListaVuelos();
+                    lbl_error.Visible = false;
+                }
             }
+            else
+            {
+                lbl_error.Text = "El vuelo seleccionado no esta en Vigencia";
+            }
+        }
+        private void ActualizarListaVuelos()
+        {
+            dtg_infoGeneral.DataSource = Volarg.listaDeVuelos;
+            dtg_infoGeneral.Enabled = true;
+            ActualizarEnableMenuTripAviones();
+        }
+        private void listaDeDestinosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dtg_infoGeneral.DataSource = Volarg.listaDeVuelos;
+            dtg_infoGeneral.Enabled = false;
+            ActualizarEnableMenuTripAviones();
+        }
+
+        private void listaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dtg_infoGeneral.DataSource = Volarg.listaHistorialPasajeros;
+            dtg_infoGeneral.Enabled = false;
+            ActualizarEnableMenuTripAviones();
+        }
+
+        private void aereonavesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            aereonavesToolStripMenuItem.Enabled = false;
+            dtg_infoGeneral.DataSource = Volarg.listaDeAviones;
+            dtg_infoGeneral.Columns.RemoveAt(0);
+            dtg_infoGeneral.Columns.RemoveAt(1);
+            dtg_infoGeneral.Columns.RemoveAt(1);
+            dtg_infoGeneral.Columns.RemoveAt(1);
+            dtg_infoGeneral.Columns.RemoveAt(1);
+            dtg_infoGeneral.Enabled = false;
+        }
+        private void ActualizarEnableMenuTripAviones()
+        {
+            aereonavesToolStripMenuItem.Enabled = true;
+            avionesToolStripMenuItem.Enabled = true;
         }
     }
 }

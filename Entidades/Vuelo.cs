@@ -20,10 +20,10 @@ namespace Entidades
         Iguazu,
         Salta,
         SantiagoDelEstero,
-        Trellew,
+        Trelew,
         Tucuman,
         PuertoMadryn,
-        Usuahuaia,
+        Ushuaia,
         Recife,
         Roma,
         Acapulco,
@@ -34,7 +34,7 @@ namespace Entidades
         static int lastId;
         int id;
         Aereonave avionAsignado;
-        int duracion;
+        double duracionDelVuelo;
         DateTime horaDeSalida;
         DateTime horaDeLlegada;
         ELugar origen;
@@ -42,18 +42,20 @@ namespace Entidades
         bool wifi;
         bool comida;
         bool internacional;
+        double recaudacionTotal;
+        bool enVigencia;
 
         static Vuelo()
         {
             lastId = 1000;
         }
-        public Vuelo(int id, Aereonave avionAsignado, int duracion, DateTime horaDeSalida, DateTime horaDeLlegada, ELugar origen, ELugar destino, bool wifi, bool comida, bool internacional)
+        public Vuelo(int id, Aereonave avionAsignado, double duracionVuelo, DateTime horaDeSalida, DateTime horaDeLlegada, ELugar origen, ELugar destino, bool wifi, bool comida, bool internacional)
         {
             lastId = id;
             this.id = id;
             lastId++;
             this.avionAsignado = avionAsignado;
-            this.duracion = duracion;
+            this.duracionDelVuelo = duracionVuelo;
             this.horaDeSalida = horaDeSalida;
             this.horaDeLlegada = horaDeLlegada;
             this.origen = origen;
@@ -61,8 +63,10 @@ namespace Entidades
             this.wifi = wifi;
             this.comida = comida;
             this.internacional = internacional;
+            this.recaudacionTotal = 0;
+            enVigencia = true;
         }
-        public static int CalcularDuracionDeVuelo(bool vueloInternacional)
+        public static double CalcularDuracionDeVuelo(bool vueloInternacional)
         {
             Random numeroAleatorio = new Random();
             if (vueloInternacional == true)
@@ -71,11 +75,49 @@ namespace Entidades
             }
             return numeroAleatorio.Next(2, 5);
         }
+        public double RecaudacionTotal
+        {
+            get { return this.recaudacionTotal; }
+            set { recaudacionTotal += value; }
+        }
+        public bool Envigencia
+        {
+            get { return this.enVigencia; }
+            set { enVigencia = value; }
+        }
         public int Id
         {
             get { return id; }
         }
-        public string AvionAsignado
+        public Aereonave AvionAsignado
+        {
+            get { return this.avionAsignado; }
+        }
+        public string Estado
+        {
+            get
+            {
+                int cantidadPasajeros = avionAsignado.cantidadDePasajerosCargados();
+                if (cantidadPasajeros < AvionAsignado.PasajerosEnAvion.Length)
+                {
+                    return "Disponible";
+                }
+                else
+                {
+                    return "Completo";
+                }
+            }
+        }
+        public string AsientosOcupados
+        {
+            get
+            {
+                int cantidadPasajeros = avionAsignado.cantidadDePasajerosCargados();
+                string retorno = $"{cantidadPasajeros}/{AvionAsignado.PasajerosEnAvion.Length}";
+                return retorno;
+            }
+        }
+        public string MatriculaAvionAsignado
         {
             get { return this.avionAsignado.Matricula; }
         }
@@ -83,16 +125,13 @@ namespace Entidades
         {
             get { return this.horaDeSalida; }
         }
-        public int DuracionDelVuelo
+        public double DuracionDelVuelo
         {
-            get { return this.duracion; }
+            get { return this.duracionDelVuelo; }
         }
         public DateTime HoraDeLlegada
         {
-            get
-            {
-                return this.horaDeLlegada;
-            }
+            get { return this.horaDeLlegada; }
         }
         public ELugar Origen
         {
@@ -100,10 +139,7 @@ namespace Entidades
         }
         public ELugar Destino
         {
-            get
-            {
-                return this.destino;
-            }
+            get { return this.destino; }
         }
         public bool Wifi
         {
@@ -120,6 +156,10 @@ namespace Entidades
         public static int GenerarId()
         {
             return lastId;
+        }
+        public override string ToString()
+        {
+            return id.ToString();
         }
     }
 }

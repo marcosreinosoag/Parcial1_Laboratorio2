@@ -22,3 +22,6 @@ C:\Users\marco\source\repos\Reinoso.Marcos.PrimerParcial\Vista\obj\Debug\net5.0-
 C:\Users\marco\source\repos\Reinoso.Marcos.PrimerParcial\Vista\obj\Debug\net5.0-windows\Vista.genruntimeconfig.cache
 C:\Users\marco\source\repos\Reinoso.Marcos.PrimerParcial\Vista\obj\Debug\net5.0-windows\Vista.CrearVuelo.resources
 C:\Users\marco\source\repos\Reinoso.Marcos.PrimerParcial\Vista\obj\Debug\net5.0-windows\Vista.VenderPasaje.resources
+C:\Users\marco\source\repos\Reinoso.Marcos.PrimerParcial\Vista\obj\Debug\net5.0-windows\Vista.Properties.Resources.resources
+C:\Users\marco\source\repos\Reinoso.Marcos.PrimerParcial\Vista\obj\Debug\net5.0-windows\Vista.InformacionVuelo.resources
+C:\Users\marco\source\repos\Reinoso.Marcos.PrimerParcial\Vista\obj\Debug\net5.0-windows\Vista.CobroPasajero.resources
