@@ -25,9 +25,9 @@ Clases estaticas: se utilizo la clase Volarg como clase estatica para poder impl
 
 - Programación orientada a objetos
 
-Se utilizaron clases y objetos en todo el proyecto (ejemplo clase Aereonave)
+Se utilizaron clases y objetos en todo el proyecto (ejemplo clase Vendedor)
 
-Se creo la clase Aereonave
+Se creo la clase Vendedor tomandola como molde o plantilla, dentro se crearon los atributos primordiales aplicando encapsulamiento y marcandolos como private, se aplico abstraccion dejando de lado las caracteristicas inecesarias por ejemplo(Altura, peso). Se crearon objetos del tipo vendedor cada uno con caracteristicas distintas. Se aplico herencia entre las clases Persona, Vendedor y Pasajero. y se utilizo polimorfismo creando el metodo public abstract string MostrarDatos();
 
 - Sobrecarga
 
@@ -53,12 +53,10 @@ Se realizo la herencia entre la clase persona(Clase Base) y las clases Pasajero(
 
 La clase Pesona se utilizo como abstracta ya no se requiere por ningun motivo crear e instancia un objeto del tipo Persona, se incluyo el polimorfisto creando el metodo public abstract string MostrarDatos() que obliga a las clases derivadas implementar si o si el metodo y utilizarlo de distintas maneras. 
 
-Implementario de esa forma:
-
-
-
-
 Propuesta de valor agregado:
+
+![image](https://user-images.githubusercontent.com/68253845/193799390-48ecccb3-5a75-45f8-8c69-6cda70fb61bc.png)
+Se utilizo el evento Mouse Hover para indicar los errores cuando se ingresa un dato, pasando el mouse encima del boton de error te muestra el error.
 
 
 
