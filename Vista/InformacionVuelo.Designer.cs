@@ -31,21 +31,21 @@ namespace Vista
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformacionVuelo));
             this.chb_comida = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_incluye = new System.Windows.Forms.Label();
             this.chb_wifi = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_destino = new System.Windows.Forms.Label();
+            this.lbl_origen = new System.Windows.Forms.Label();
             this.txb_destino = new System.Windows.Forms.TextBox();
             this.txb_origen = new System.Windows.Forms.TextBox();
             this.txb_idVuelo = new System.Windows.Forms.TextBox();
             this.btn_cargarPasajeros = new System.Windows.Forms.Button();
             this.nud_cantidadDePasajeros = new System.Windows.Forms.NumericUpDown();
             this.btn_infoPasajeros = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_cantidadPasajeros = new System.Windows.Forms.Label();
             this.dtg_infoGeneral = new System.Windows.Forms.DataGridView();
             this.btn_equipaje = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
-            this.lbl_errorCantidadPasajeros = new System.Windows.Forms.Label();
+            this.lbl_errorPasajeros = new System.Windows.Forms.Label();
             this.btn_finalizarVuelo = new System.Windows.Forms.Button();
             this.btn_Info = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadDePasajeros)).BeginInit();
@@ -67,15 +67,15 @@ namespace Vista
             this.chb_comida.Text = "Comida";
             this.chb_comida.UseVisualStyleBackColor = false;
             // 
-            // label5
+            // lbl_incluye
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 39);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 15);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Incluye :";
+            this.lbl_incluye.AutoSize = true;
+            this.lbl_incluye.ForeColor = System.Drawing.Color.White;
+            this.lbl_incluye.Location = new System.Drawing.Point(3, 39);
+            this.lbl_incluye.Name = "lbl_incluye";
+            this.lbl_incluye.Size = new System.Drawing.Size(51, 15);
+            this.lbl_incluye.TabIndex = 18;
+            this.lbl_incluye.Text = "Incluye :";
             // 
             // chb_wifi
             // 
@@ -92,25 +92,25 @@ namespace Vista
             this.chb_wifi.Text = "Wifi";
             this.chb_wifi.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // lbl_destino
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(456, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 15);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Destino :";
+            this.lbl_destino.AutoSize = true;
+            this.lbl_destino.ForeColor = System.Drawing.Color.White;
+            this.lbl_destino.Location = new System.Drawing.Point(456, 9);
+            this.lbl_destino.Name = "lbl_destino";
+            this.lbl_destino.Size = new System.Drawing.Size(53, 15);
+            this.lbl_destino.TabIndex = 16;
+            this.lbl_destino.Text = "Destino :";
             // 
-            // label1
+            // lbl_origen
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(153, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 15);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Origen";
+            this.lbl_origen.AutoSize = true;
+            this.lbl_origen.ForeColor = System.Drawing.Color.White;
+            this.lbl_origen.Location = new System.Drawing.Point(153, 9);
+            this.lbl_origen.Name = "lbl_origen";
+            this.lbl_origen.Size = new System.Drawing.Size(43, 15);
+            this.lbl_origen.TabIndex = 15;
+            this.lbl_origen.Text = "Origen";
             // 
             // txb_destino
             // 
@@ -163,20 +163,20 @@ namespace Vista
             this.btn_infoPasajeros.UseVisualStyleBackColor = true;
             this.btn_infoPasajeros.Click += new System.EventHandler(this.btn_infoPasajeros_Click);
             // 
-            // label3
+            // lbl_cantidadPasajeros
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(18, 77);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 15);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Cantidad De Pasajeros";
+            this.lbl_cantidadPasajeros.AutoSize = true;
+            this.lbl_cantidadPasajeros.ForeColor = System.Drawing.Color.White;
+            this.lbl_cantidadPasajeros.Location = new System.Drawing.Point(18, 77);
+            this.lbl_cantidadPasajeros.Name = "lbl_cantidadPasajeros";
+            this.lbl_cantidadPasajeros.Size = new System.Drawing.Size(124, 15);
+            this.lbl_cantidadPasajeros.TabIndex = 20;
+            this.lbl_cantidadPasajeros.Text = "Cantidad De Pasajeros";
             // 
             // dtg_infoGeneral
             // 
             this.dtg_infoGeneral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_infoGeneral.Location = new System.Drawing.Point(18, 121);
+            this.dtg_infoGeneral.Location = new System.Drawing.Point(20, 121);
             this.dtg_infoGeneral.Name = "dtg_infoGeneral";
             this.dtg_infoGeneral.RowTemplate.Height = 25;
             this.dtg_infoGeneral.Size = new System.Drawing.Size(802, 317);
@@ -202,16 +202,15 @@ namespace Vista
             this.btn_salir.UseVisualStyleBackColor = true;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
-            // lbl_errorCantidadPasajeros
+            // lbl_errorPasajeros
             // 
-            this.lbl_errorCantidadPasajeros.AutoSize = true;
-            this.lbl_errorCantidadPasajeros.Font = new System.Drawing.Font("Bodoni MT Condensed", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_errorCantidadPasajeros.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorCantidadPasajeros.Location = new System.Drawing.Point(173, 104);
-            this.lbl_errorCantidadPasajeros.Name = "lbl_errorCantidadPasajeros";
-            this.lbl_errorCantidadPasajeros.Size = new System.Drawing.Size(0, 14);
-            this.lbl_errorCantidadPasajeros.TabIndex = 36;
-            this.lbl_errorCantidadPasajeros.Visible = false;
+            this.lbl_errorPasajeros.AutoSize = true;
+            this.lbl_errorPasajeros.Font = new System.Drawing.Font("Bodoni MT Condensed", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_errorPasajeros.ForeColor = System.Drawing.Color.Red;
+            this.lbl_errorPasajeros.Location = new System.Drawing.Point(173, 104);
+            this.lbl_errorPasajeros.Name = "lbl_errorPasajeros";
+            this.lbl_errorPasajeros.Size = new System.Drawing.Size(0, 14);
+            this.lbl_errorPasajeros.TabIndex = 36;
             // 
             // btn_finalizarVuelo
             // 
@@ -243,26 +242,28 @@ namespace Vista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(847, 494);
+            this.ClientSize = new System.Drawing.Size(841, 503);
             this.ControlBox = false;
             this.Controls.Add(this.btn_Info);
             this.Controls.Add(this.btn_finalizarVuelo);
-            this.Controls.Add(this.lbl_errorCantidadPasajeros);
+            this.Controls.Add(this.lbl_errorPasajeros);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_equipaje);
             this.Controls.Add(this.btn_cargarPasajeros);
             this.Controls.Add(this.nud_cantidadDePasajeros);
             this.Controls.Add(this.btn_infoPasajeros);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_cantidadPasajeros);
             this.Controls.Add(this.chb_comida);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbl_incluye);
             this.Controls.Add(this.chb_wifi);
             this.Controls.Add(this.dtg_infoGeneral);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_destino);
+            this.Controls.Add(this.lbl_origen);
             this.Controls.Add(this.txb_destino);
             this.Controls.Add(this.txb_origen);
             this.Controls.Add(this.txb_idVuelo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "InformacionVuelo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vuelo";
@@ -277,21 +278,21 @@ namespace Vista
         #endregion
 
         private System.Windows.Forms.CheckBox chb_comida;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_incluye;
         private System.Windows.Forms.CheckBox chb_wifi;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_destino;
+        private System.Windows.Forms.Label lbl_origen;
         private System.Windows.Forms.TextBox txb_destino;
         private System.Windows.Forms.TextBox txb_origen;
         private System.Windows.Forms.TextBox txb_idVuelo;
         private System.Windows.Forms.Button btn_cargarPasajeros;
         private System.Windows.Forms.NumericUpDown nud_cantidadDePasajeros;
         private System.Windows.Forms.Button btn_infoPasajeros;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_cantidadPasajeros;
         private System.Windows.Forms.DataGridView dtg_infoGeneral;
         private System.Windows.Forms.Button btn_equipaje;
         private System.Windows.Forms.Button btn_salir;
-        private System.Windows.Forms.Label lbl_errorCantidadPasajeros;
+        private System.Windows.Forms.Label lbl_errorPasajeros;
         private System.Windows.Forms.Button btn_finalizarVuelo;
         private System.Windows.Forms.Button btn_Info;
     }

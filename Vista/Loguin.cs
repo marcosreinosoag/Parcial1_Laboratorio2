@@ -25,14 +25,12 @@ namespace Vista
         {
             string usuarioIngresado;
             string claveIngresada;
-
             usuarioIngresado = txb_usuario.Text;
             claveIngresada = txb_clave.Text;
-
             if (Volarg.VerificarUsuarioYClave(usuarioIngresado, claveIngresada))
             {
                 string nombreDelVendedor = Volarg.DevolverNombreVendedor(usuarioIngresado);
-                MenuPrincipal frm_menuPrincipal = new MenuPrincipal(nombreDelVendedor);
+                MenuPrincipal frm_menuPrincipal = new MenuPrincipal(nombreDelVendedor, Volarg.DevolverVandedorPorUsuario(usuarioIngresado));
                 frm_menuPrincipal.Show();
                 this.Hide();
             }

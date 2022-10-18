@@ -143,6 +143,21 @@ namespace Entidades
                 }
             }
         }
+        public int CalcularCantidadDeEquipajesDisponibles()
+        {
+            int cantidadEquipajesDisponibles;
+            int cantidadEquipajeDeMano = 0;
+            foreach (var item in equipajesEnAvion)
+            {
+                if (item.Key.DeMano == true)
+                {
+                    cantidadEquipajeDeMano++;
+                }
+            }
+            cantidadEquipajesDisponibles = this.capacidadBodega - equipajesEnAvion.Count;
+            cantidadEquipajesDisponibles += cantidadEquipajeDeMano;
+            return cantidadEquipajesDisponibles;
+        }
         public int cantidadDePasajerosCargados()
         {
             int acumuladorDePasajeros = 0;
@@ -165,6 +180,7 @@ namespace Entidades
             }
             return (int)cantidadDeAsientosPremium;
         }
+
         public override string ToString()
         {
             return matricula.ToString();

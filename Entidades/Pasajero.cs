@@ -11,6 +11,7 @@ namespace Entidades
         int edad;
         int viajesRelizados;
         int asientoAsignado;
+
         public Pasajero(string nombre, string apellido, string dni, DateTime fechaDeNacimiento, int asientoAsignado, int viajesRelizados) : base(dni, nombre, apellido, fechaDeNacimiento)
         {
             this.edad = DateTime.Now.Year - fechaDeNacimiento.Year;
@@ -19,7 +20,7 @@ namespace Entidades
         }
         public override string ToString()
         {
-            return $"{this.Nombre} \n {this.Apellido} \n {this. edad.ToString()}";
+            return $"{this.Nombre} \n {this.Apellido} \n {this.edad.ToString()}";
         }
         public int Edad
         {
@@ -32,7 +33,8 @@ namespace Entidades
         }
         public override string MostrarDatos()
         {
-            return this.ToString();
+            string datos = $" El Pasajero {this.Nombre} {this.Apellido} Realizo {this.ViajesRealizados} Viajes.";
+            return datos;
         }
         public int AsientoAsignado
         {

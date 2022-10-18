@@ -8,26 +8,29 @@ namespace Entidades
 {
     public class Equipaje
     {
-        string color;
+        static int lastId;
+        int id;
         double peso;
         double altura;
         double ancho;
         bool deMano;
-        string descripcion;
-
-        public Equipaje(string color, double peso, double altura, double ancho, bool deMano, string descripcion)
+        static Equipaje()
         {
-            this.Color = color;
-            this.Peso = peso;
-            this.Altura = altura;
-            this.Ancho = ancho;
-            this.DeMano = deMano;
-            this.Descripcion = descripcion;
+            lastId = 1000;
         }
-        public string Color
+        public Equipaje(int id, double peso, double altura, double ancho, bool deMano)
         {
-            get { return color; }
-            set { color = value; }
+            lastId = id;
+            this.id = id;
+            lastId++;
+            this.peso = peso;
+            this.altura = altura;
+            this.ancho = ancho;
+            this.deMano = deMano;
+        }
+        public int Id
+        {
+            get { return id; }
         }
         public double Peso
         {
@@ -36,14 +39,8 @@ namespace Entidades
         }
         public double Altura
         {
-            get
-            {
-                return altura;
-            }
-            set
-            {
-                altura = value;
-            }
+            get { return altura; }
+            set { altura = value; }
         }
         public double Ancho
         {
@@ -52,36 +49,29 @@ namespace Entidades
         }
         public bool DeMano
         {
-            get
-            {
-                return deMano;
-            }
-            set
-            {
-                deMano = value;
-            }
+            get { return deMano; }
+            set { deMano = value; }
         }
-        public string Descripcion
+        public static int GenerarId()
         {
-            get { return descripcion; }
-            set { descripcion = value; }
+            return lastId;
         }
         public override string ToString()
         {
-            return descripcion.ToString();
+            return peso.ToString();
         }
         public override bool Equals(object obj)
         {
             Equipaje equipaje = obj as Equipaje;
             if (equipaje is not null)
             {
-                return equipaje.descripcion == this.descripcion;
+                return equipaje.id == this.id;
             }
             return false;
         }
         public override int GetHashCode()
         {
-            return (descripcion).GetHashCode();
+            return (id).GetHashCode();
         }
     }
 }

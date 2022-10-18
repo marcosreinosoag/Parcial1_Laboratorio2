@@ -15,8 +15,10 @@ namespace Vista
     {
         Vuelo vueloSeleccionado;
         Aereonave avionAsignado;
-        public InformacionVuelo(Vuelo vueloSeleccionado, Aereonave avionAsignado)
+        Vendedor usuarioIngresado;
+        public InformacionVuelo(Vuelo vueloSeleccionado, Aereonave avionAsignado, Vendedor usuarioIngresado)
         {
+            this.usuarioIngresado = usuarioIngresado;
             this.avionAsignado = avionAsignado;
             this.vueloSeleccionado = vueloSeleccionado;
             InitializeComponent();
@@ -33,27 +35,32 @@ namespace Vista
 
         private void btn_cargarPasajeros_Click(object sender, EventArgs e)
         {
+            lbl_errorPasajeros.Text = "";
+            lbl_errorPasajeros.ForeColor = Color.Red;
             int cantidadDeAsientosOcupados = avionAsignado.cantidadDePasajerosCargados();
             int cantidadDeAsientosDisponibles = avionAsignado.CantidadAsientos - cantidadDeAsientosOcupados;
             if (nud_cantidadDePasajeros.Value > 0)////validar  que sea enterooo
             {
-                lbl_errorCantidadPasajeros.Visible = true;
-                lbl_errorCantidadPasajeros.Text = "La cantidad ingresada supera los asientos disponibles";
+                lbl_errorPasajeros.Text = "La cantidad ingresada supera los asientos disponibles";
                 if (nud_cantidadDePasajeros.Value < cantidadDeAsientosDisponibles)
                 {
-                    lbl_errorCantidadPasajeros.Visible = false;
+                    lbl_errorPasajeros.Visible = false;
                     VenderPasaje frm_venderPasaje = new VenderPasaje(avionAsignado, vueloSeleccionado, (int)nud_cantidadDePasajeros.Value);
                     DialogResult resultado = frm_venderPasaje.ShowDialog();
                     if (resultado == DialogResult.OK)
                     {
                         actulizarDatos();
+                        usuarioIngresado.CantidadDePasajesVendidos = (int)nud_cantidadDePasajeros.Value;
+                        lbl_errorPasajeros.Text = "Carga realizada correctamente";
+                        lbl_errorPasajeros.ForeColor = Color.Green;
+                        lbl_errorPasajeros.Visible = true;
                     }
                 }
             }
             else
             {
-                lbl_errorCantidadPasajeros.Text = "La cantidad ingresada debe ser mayor a Cero";
-                lbl_errorCantidadPasajeros.Visible = true;
+                lbl_errorPasajeros.Text = "La cantidad ingresada debe ser mayor a Cero";
+                lbl_errorPasajeros.Visible = true;
             }
         }
         private void actulizarDatos()
@@ -82,6 +89,7 @@ namespace Vista
             avionAsignado.Disponible = false;
             avionAsignado.ResetearListas();
             this.DialogResult = DialogResult.Cancel;
+            Volarg.recaudacionTotal += vueloSeleccionado.RecaudacionTotal;
             this.Close();
         }
 

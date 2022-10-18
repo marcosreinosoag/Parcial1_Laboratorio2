@@ -32,14 +32,14 @@ namespace Vista
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearVuelo));
             this.chx_internacional = new System.Windows.Forms.CheckBox();
             this.cmb_avionAsignado = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_avionAsignado = new System.Windows.Forms.Label();
             this.cmb_origen = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_origen = new System.Windows.Forms.Label();
+            this.lbl_destino = new System.Windows.Forms.Label();
             this.cmb_destino = new System.Windows.Forms.ComboBox();
             this.dtp_horaDeSalida = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_horaSalida = new System.Windows.Forms.Label();
+            this.lbl_horaLlegada = new System.Windows.Forms.Label();
             this.dtp_horaDeLlegada = new System.Windows.Forms.DateTimePicker();
             this.btn_generarDuracion = new System.Windows.Forms.Button();
             this.txt_duracionVuelo = new System.Windows.Forms.TextBox();
@@ -78,15 +78,15 @@ namespace Vista
             this.cmb_avionAsignado.Size = new System.Drawing.Size(291, 23);
             this.cmb_avionAsignado.TabIndex = 1;
             // 
-            // label1
+            // lbl_avionAsignado
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(24, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Avion Asignado";
+            this.lbl_avionAsignado.AutoSize = true;
+            this.lbl_avionAsignado.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_avionAsignado.Location = new System.Drawing.Point(24, 25);
+            this.lbl_avionAsignado.Name = "lbl_avionAsignado";
+            this.lbl_avionAsignado.Size = new System.Drawing.Size(91, 15);
+            this.lbl_avionAsignado.TabIndex = 2;
+            this.lbl_avionAsignado.Text = "Avion Asignado";
             // 
             // cmb_origen
             // 
@@ -98,25 +98,25 @@ namespace Vista
             this.cmb_origen.TabIndex = 3;
             this.cmb_origen.SelectedIndexChanged += new System.EventHandler(this.cmb_origen_SelectedIndexChanged);
             // 
-            // label2
+            // lbl_origen
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(64, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Origen:";
+            this.lbl_origen.AutoSize = true;
+            this.lbl_origen.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_origen.Location = new System.Drawing.Point(64, 106);
+            this.lbl_origen.Name = "lbl_origen";
+            this.lbl_origen.Size = new System.Drawing.Size(46, 15);
+            this.lbl_origen.TabIndex = 4;
+            this.lbl_origen.Text = "Origen:";
             // 
-            // label3
+            // lbl_destino
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(64, 168);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Destino:";
+            this.lbl_destino.AutoSize = true;
+            this.lbl_destino.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_destino.Location = new System.Drawing.Point(64, 168);
+            this.lbl_destino.Name = "lbl_destino";
+            this.lbl_destino.Size = new System.Drawing.Size(50, 15);
+            this.lbl_destino.TabIndex = 5;
+            this.lbl_destino.Text = "Destino:";
             // 
             // cmb_destino
             // 
@@ -135,25 +135,25 @@ namespace Vista
             this.dtp_horaDeSalida.Size = new System.Drawing.Size(291, 23);
             this.dtp_horaDeSalida.TabIndex = 7;
             // 
-            // label4
+            // lbl_horaSalida
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(15, 217);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 15);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Horario de Salida:";
+            this.lbl_horaSalida.AutoSize = true;
+            this.lbl_horaSalida.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_horaSalida.Location = new System.Drawing.Point(15, 217);
+            this.lbl_horaSalida.Name = "lbl_horaSalida";
+            this.lbl_horaSalida.Size = new System.Drawing.Size(100, 15);
+            this.lbl_horaSalida.TabIndex = 8;
+            this.lbl_horaSalida.Text = "Horario de Salida:";
             // 
-            // label5
+            // lbl_horaLlegada
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(19, 312);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 15);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Horario de Llegada:";
+            this.lbl_horaLlegada.AutoSize = true;
+            this.lbl_horaLlegada.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_horaLlegada.Location = new System.Drawing.Point(19, 312);
+            this.lbl_horaLlegada.Name = "lbl_horaLlegada";
+            this.lbl_horaLlegada.Size = new System.Drawing.Size(110, 15);
+            this.lbl_horaLlegada.TabIndex = 9;
+            this.lbl_horaLlegada.Text = "Horario de Llegada:";
             // 
             // dtp_horaDeLlegada
             // 
@@ -350,14 +350,14 @@ namespace Vista
             this.Controls.Add(this.txt_duracionVuelo);
             this.Controls.Add(this.btn_generarDuracion);
             this.Controls.Add(this.dtp_horaDeLlegada);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbl_horaLlegada);
+            this.Controls.Add(this.lbl_horaSalida);
             this.Controls.Add(this.dtp_horaDeSalida);
             this.Controls.Add(this.cmb_destino);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_destino);
+            this.Controls.Add(this.lbl_origen);
             this.Controls.Add(this.cmb_origen);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_avionAsignado);
             this.Controls.Add(this.cmb_avionAsignado);
             this.Controls.Add(this.chx_internacional);
             this.Name = "CrearVuelo";
@@ -373,14 +373,14 @@ namespace Vista
 
         private System.Windows.Forms.CheckBox chx_internacional;
         private System.Windows.Forms.ComboBox cmb_avionAsignado;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_avionAsignado;
         private System.Windows.Forms.ComboBox cmb_origen;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_origen;
+        private System.Windows.Forms.Label lbl_destino;
         private System.Windows.Forms.ComboBox cmb_destino;
         private System.Windows.Forms.DateTimePicker dtp_horaDeSalida;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_horaSalida;
+        private System.Windows.Forms.Label lbl_horaLlegada;
         private System.Windows.Forms.DateTimePicker dtp_horaDeLlegada;
         private System.Windows.Forms.Button btn_generarDuracion;
         private System.Windows.Forms.TextBox txt_duracionVuelo;

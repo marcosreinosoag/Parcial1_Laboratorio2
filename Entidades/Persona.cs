@@ -19,7 +19,6 @@ namespace Entidades
             this.apellido = apellido;
             this.fechaDeNacimiento = fechaDeNacimiento;
         }
-        
         public string Dni
         {
             get { return this.dni; }

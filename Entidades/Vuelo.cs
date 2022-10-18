@@ -44,7 +44,6 @@ namespace Entidades
         bool internacional;
         double recaudacionTotal;
         bool enVigencia;
-
         static Vuelo()
         {
             lastId = 1000;
@@ -75,6 +74,15 @@ namespace Entidades
             }
             return numeroAleatorio.Next(2, 5);
         }
+        
+        public int Id
+        {
+            get { return id; }
+        }
+        public Aereonave AvionAsignado
+        {
+            get { return this.avionAsignado; }
+        }
         public double RecaudacionTotal
         {
             get { return this.recaudacionTotal; }
@@ -84,14 +92,6 @@ namespace Entidades
         {
             get { return this.enVigencia; }
             set { enVigencia = value; }
-        }
-        public int Id
-        {
-            get { return id; }
-        }
-        public Aereonave AvionAsignado
-        {
-            get { return this.avionAsignado; }
         }
         public string Estado
         {
@@ -173,6 +173,34 @@ namespace Entidades
         public override int GetHashCode()
         {
             return (id).GetHashCode();
+        }
+        public static double CalcularValorPasaje(bool internacional, double horasDeVuelo, bool claseTurista)
+        {
+            double valorfinal = 0;
+            double porcentajeAdicional = 0;
+            if (internacional == true)
+            {
+                valorfinal = horasDeVuelo * 100;
+                if (claseTurista == false)
+                {
+                    porcentajeAdicional = valorfinal * 0.15;
+                    return valorfinal + porcentajeAdicional;
+                }
+                return valorfinal;
+            }
+            valorfinal = horasDeVuelo * 50;
+            if (claseTurista == false)
+            {
+                porcentajeAdicional = valorfinal * 0.15;
+                return valorfinal + porcentajeAdicional;
+            }
+            return valorfinal;
+        }
+        public static double CalcularIva(double precio)
+        {
+            double calcularPorcentaje;
+            calcularPorcentaje = precio * 0.21;
+            return calcularPorcentaje;
         }
     }
 }

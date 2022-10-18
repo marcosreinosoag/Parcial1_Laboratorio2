@@ -32,24 +32,30 @@ namespace Vista
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.lbl_fecha = new System.Windows.Forms.Label();
             this.lbl_nombreUsuario = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vuelosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearVueloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.avionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaDeDestinosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gananciasTotalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aereonavesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnt_MenuPricipal = new System.Windows.Forms.MenuStrip();
+            this.bmt_vendedores = new System.Windows.Forms.ToolStripMenuItem();
+            this.bmt_vuelos = new System.Windows.Forms.ToolStripMenuItem();
+            this.bmt_crearVuelo = new System.Windows.Forms.ToolStripMenuItem();
+            this.bmt_aviones = new System.Windows.Forms.ToolStripMenuItem();
+            this.bmt_estadisticas = new System.Windows.Forms.ToolStripMenuItem();
+            this.bmt_listaDestinos = new System.Windows.Forms.ToolStripMenuItem();
+            this.bmt_listaPasajerosFrecuentes = new System.Windows.Forms.ToolStripMenuItem();
+            this.bmt_gananciasTotales = new System.Windows.Forms.ToolStripMenuItem();
+            this.bmt_listaAereonaves = new System.Windows.Forms.ToolStripMenuItem();
+            this.bmt_listaVendedores = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_salir = new System.Windows.Forms.Button();
             this.dtg_infoGeneral = new System.Windows.Forms.DataGridView();
-            this.btn_vendedorMayorEdad = new System.Windows.Forms.Button();
+            this.btn_vendedorMasPasajesVendidos = new System.Windows.Forms.Button();
             this.lbl_error = new System.Windows.Forms.Label();
-            this.btn_pasajeroMasViejes = new System.Windows.Forms.Button();
+            this.btn_pasajeroMasViajes = new System.Windows.Forms.Button();
             this.btn_Info = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.lbl_recaudacionTotal = new System.Windows.Forms.Label();
+            this.chb_wifi = new System.Windows.Forms.CheckBox();
+            this.lbl_filtrar = new System.Windows.Forms.Label();
+            this.chb_comida = new System.Windows.Forms.CheckBox();
+            this.lbl_recaudacionInternacional = new System.Windows.Forms.Label();
+            this.lbl_recaudacionCabotaje = new System.Windows.Forms.Label();
+            this.mnt_MenuPricipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_infoGeneral)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,94 +77,95 @@ namespace Vista
             this.lbl_nombreUsuario.Size = new System.Drawing.Size(0, 15);
             this.lbl_nombreUsuario.TabIndex = 5;
             // 
-            // menuStrip1
+            // mnt_MenuPricipal
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vendedoresToolStripMenuItem,
-            this.vuelosToolStripMenuItem,
-            this.avionesToolStripMenuItem,
-            this.estadisticasToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 7;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mnt_MenuPricipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bmt_vendedores,
+            this.bmt_vuelos,
+            this.bmt_aviones,
+            this.bmt_estadisticas});
+            this.mnt_MenuPricipal.Location = new System.Drawing.Point(0, 0);
+            this.mnt_MenuPricipal.Name = "mnt_MenuPricipal";
+            this.mnt_MenuPricipal.Size = new System.Drawing.Size(817, 24);
+            this.mnt_MenuPricipal.TabIndex = 7;
+            this.mnt_MenuPricipal.Text = "menuStrip1";
             // 
-            // vendedoresToolStripMenuItem
+            // bmt_vendedores
             // 
-            this.vendedoresToolStripMenuItem.Name = "vendedoresToolStripMenuItem";
-            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.vendedoresToolStripMenuItem.Text = "Vendedores";
-            this.vendedoresToolStripMenuItem.Click += new System.EventHandler(this.vendedoresToolStripMenuItem_Click);
+            this.bmt_vendedores.Name = "bmt_vendedores";
+            this.bmt_vendedores.Size = new System.Drawing.Size(80, 20);
+            this.bmt_vendedores.Text = "Vendedores";
+            this.bmt_vendedores.Click += new System.EventHandler(this.vendedoresToolStripMenuItem_Click);
             // 
-            // vuelosToolStripMenuItem
+            // bmt_vuelos
             // 
-            this.vuelosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.crearVueloToolStripMenuItem});
-            this.vuelosToolStripMenuItem.Name = "vuelosToolStripMenuItem";
-            this.vuelosToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.vuelosToolStripMenuItem.Text = "Vuelos";
-            this.vuelosToolStripMenuItem.Click += new System.EventHandler(this.vuelosToolStripMenuItem_Click);
+            this.bmt_vuelos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bmt_crearVuelo});
+            this.bmt_vuelos.Name = "bmt_vuelos";
+            this.bmt_vuelos.Size = new System.Drawing.Size(54, 20);
+            this.bmt_vuelos.Text = "Vuelos";
+            this.bmt_vuelos.Click += new System.EventHandler(this.vuelosToolStripMenuItem_Click);
             // 
-            // crearVueloToolStripMenuItem
+            // bmt_crearVuelo
             // 
-            this.crearVueloToolStripMenuItem.Name = "crearVueloToolStripMenuItem";
-            this.crearVueloToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.crearVueloToolStripMenuItem.Text = "Crear Vuelo";
-            this.crearVueloToolStripMenuItem.Click += new System.EventHandler(this.crearVueloToolStripMenuItem_Click);
+            this.bmt_crearVuelo.Name = "bmt_crearVuelo";
+            this.bmt_crearVuelo.Size = new System.Drawing.Size(135, 22);
+            this.bmt_crearVuelo.Text = "Crear Vuelo";
+            this.bmt_crearVuelo.Click += new System.EventHandler(this.crearVueloToolStripMenuItem_Click);
             // 
-            // avionesToolStripMenuItem
+            // bmt_aviones
             // 
-            this.avionesToolStripMenuItem.Name = "avionesToolStripMenuItem";
-            this.avionesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.avionesToolStripMenuItem.Text = "Aviones";
-            this.avionesToolStripMenuItem.Click += new System.EventHandler(this.avionesToolStripMenuItem_Click);
+            this.bmt_aviones.Name = "bmt_aviones";
+            this.bmt_aviones.Size = new System.Drawing.Size(61, 20);
+            this.bmt_aviones.Text = "Aviones";
+            this.bmt_aviones.Click += new System.EventHandler(this.avionesToolStripMenuItem_Click);
             // 
-            // estadisticasToolStripMenuItem
+            // bmt_estadisticas
             // 
-            this.estadisticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaDeDestinosToolStripMenuItem,
-            this.listaDeToolStripMenuItem,
-            this.gananciasTotalesToolStripMenuItem,
-            this.aereonavesToolStripMenuItem,
-            this.vendedoresToolStripMenuItem1});
-            this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
-            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.estadisticasToolStripMenuItem.Text = "Estadisticas";
+            this.bmt_estadisticas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bmt_listaDestinos,
+            this.bmt_listaPasajerosFrecuentes,
+            this.bmt_gananciasTotales,
+            this.bmt_listaAereonaves,
+            this.bmt_listaVendedores});
+            this.bmt_estadisticas.Name = "bmt_estadisticas";
+            this.bmt_estadisticas.Size = new System.Drawing.Size(79, 20);
+            this.bmt_estadisticas.Text = "Estadisticas";
             // 
-            // listaDeDestinosToolStripMenuItem
+            // bmt_listaDestinos
             // 
-            this.listaDeDestinosToolStripMenuItem.Name = "listaDeDestinosToolStripMenuItem";
-            this.listaDeDestinosToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.listaDeDestinosToolStripMenuItem.Text = "Lista De Destinos";
-            this.listaDeDestinosToolStripMenuItem.Click += new System.EventHandler(this.listaDeDestinosToolStripMenuItem_Click);
+            this.bmt_listaDestinos.Name = "bmt_listaDestinos";
+            this.bmt_listaDestinos.Size = new System.Drawing.Size(227, 22);
+            this.bmt_listaDestinos.Text = "Lista De Destinos";
+            this.bmt_listaDestinos.Click += new System.EventHandler(this.listaDeDestinosToolStripMenuItem_Click);
             // 
-            // listaDeToolStripMenuItem
+            // bmt_listaPasajerosFrecuentes
             // 
-            this.listaDeToolStripMenuItem.Name = "listaDeToolStripMenuItem";
-            this.listaDeToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.listaDeToolStripMenuItem.Text = "Lista De Pasajeros Frecuentes";
-            this.listaDeToolStripMenuItem.Click += new System.EventHandler(this.listaDeToolStripMenuItem_Click);
+            this.bmt_listaPasajerosFrecuentes.Name = "bmt_listaPasajerosFrecuentes";
+            this.bmt_listaPasajerosFrecuentes.Size = new System.Drawing.Size(227, 22);
+            this.bmt_listaPasajerosFrecuentes.Text = "Lista De Pasajeros Frecuentes";
+            this.bmt_listaPasajerosFrecuentes.Click += new System.EventHandler(this.listaDeToolStripMenuItem_Click);
             // 
-            // gananciasTotalesToolStripMenuItem
+            // bmt_gananciasTotales
             // 
-            this.gananciasTotalesToolStripMenuItem.Name = "gananciasTotalesToolStripMenuItem";
-            this.gananciasTotalesToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.gananciasTotalesToolStripMenuItem.Text = "Ganancias Totales";
+            this.bmt_gananciasTotales.Name = "bmt_gananciasTotales";
+            this.bmt_gananciasTotales.Size = new System.Drawing.Size(227, 22);
+            this.bmt_gananciasTotales.Text = "Ganancias Totales";
+            this.bmt_gananciasTotales.Click += new System.EventHandler(this.gananciasTotalesToolStripMenuItem_Click);
             // 
-            // aereonavesToolStripMenuItem
+            // bmt_listaAereonaves
             // 
-            this.aereonavesToolStripMenuItem.Name = "aereonavesToolStripMenuItem";
-            this.aereonavesToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.aereonavesToolStripMenuItem.Text = "Aereonaves";
-            this.aereonavesToolStripMenuItem.Click += new System.EventHandler(this.aereonavesToolStripMenuItem_Click);
+            this.bmt_listaAereonaves.Name = "bmt_listaAereonaves";
+            this.bmt_listaAereonaves.Size = new System.Drawing.Size(227, 22);
+            this.bmt_listaAereonaves.Text = "Aereonaves";
+            this.bmt_listaAereonaves.Click += new System.EventHandler(this.aereonavesToolStripMenuItem_Click);
             // 
-            // vendedoresToolStripMenuItem1
+            // bmt_listaVendedores
             // 
-            this.vendedoresToolStripMenuItem1.Name = "vendedoresToolStripMenuItem1";
-            this.vendedoresToolStripMenuItem1.Size = new System.Drawing.Size(227, 22);
-            this.vendedoresToolStripMenuItem1.Text = "Vendedores";
-            this.vendedoresToolStripMenuItem1.Click += new System.EventHandler(this.vendedoresToolStripMenuItem1_Click);
+            this.bmt_listaVendedores.Name = "bmt_listaVendedores";
+            this.bmt_listaVendedores.Size = new System.Drawing.Size(227, 22);
+            this.bmt_listaVendedores.Text = "Vendedores";
+            this.bmt_listaVendedores.Click += new System.EventHandler(this.vendedoresToolStripMenuItem1_Click);
             // 
             // btn_salir
             // 
@@ -173,42 +180,44 @@ namespace Vista
             // dtg_infoGeneral
             // 
             this.dtg_infoGeneral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_infoGeneral.Location = new System.Drawing.Point(14, 106);
+            this.dtg_infoGeneral.Location = new System.Drawing.Point(14, 123);
             this.dtg_infoGeneral.Name = "dtg_infoGeneral";
+            this.dtg_infoGeneral.ReadOnly = true;
             this.dtg_infoGeneral.RowTemplate.Height = 25;
-            this.dtg_infoGeneral.Size = new System.Drawing.Size(749, 296);
+            this.dtg_infoGeneral.Size = new System.Drawing.Size(791, 279);
             this.dtg_infoGeneral.TabIndex = 9;
             this.dtg_infoGeneral.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // btn_vendedorMayorEdad
+            // btn_vendedorMasPasajesVendidos
             // 
-            this.btn_vendedorMayorEdad.Location = new System.Drawing.Point(637, 36);
-            this.btn_vendedorMayorEdad.Name = "btn_vendedorMayorEdad";
-            this.btn_vendedorMayorEdad.Size = new System.Drawing.Size(126, 49);
-            this.btn_vendedorMayorEdad.TabIndex = 10;
-            this.btn_vendedorMayorEdad.Text = "Vendedor Con mayor edad";
-            this.btn_vendedorMayorEdad.UseVisualStyleBackColor = true;
-            this.btn_vendedorMayorEdad.Visible = false;
-            this.btn_vendedorMayorEdad.Click += new System.EventHandler(this.btn_vendedorMayorEdad_Click);
+            this.btn_vendedorMasPasajesVendidos.Location = new System.Drawing.Point(629, 36);
+            this.btn_vendedorMasPasajesVendidos.Name = "btn_vendedorMasPasajesVendidos";
+            this.btn_vendedorMasPasajesVendidos.Size = new System.Drawing.Size(176, 41);
+            this.btn_vendedorMasPasajesVendidos.TabIndex = 10;
+            this.btn_vendedorMasPasajesVendidos.Text = "Vendedor con mas pasajes vendidos";
+            this.btn_vendedorMasPasajesVendidos.UseVisualStyleBackColor = true;
+            this.btn_vendedorMasPasajesVendidos.Visible = false;
+            this.btn_vendedorMasPasajesVendidos.Click += new System.EventHandler(this.btn_vendedorMayorEdad_Click);
             // 
             // lbl_error
             // 
             this.lbl_error.AutoSize = true;
             this.lbl_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error.Location = new System.Drawing.Point(306, 416);
+            this.lbl_error.Location = new System.Drawing.Point(307, 431);
             this.lbl_error.Name = "lbl_error";
             this.lbl_error.Size = new System.Drawing.Size(0, 15);
             this.lbl_error.TabIndex = 11;
             // 
-            // btn_pasajeroMasViejes
+            // btn_pasajeroMasViajes
             // 
-            this.btn_pasajeroMasViejes.Location = new System.Drawing.Point(442, 36);
-            this.btn_pasajeroMasViejes.Name = "btn_pasajeroMasViejes";
-            this.btn_pasajeroMasViejes.Size = new System.Drawing.Size(133, 48);
-            this.btn_pasajeroMasViejes.TabIndex = 12;
-            this.btn_pasajeroMasViejes.Text = "Pasajero con mas viajes";
-            this.btn_pasajeroMasViejes.UseVisualStyleBackColor = true;
-            this.btn_pasajeroMasViejes.Click += new System.EventHandler(this.btn_pasajeroMasViejes_Click);
+            this.btn_pasajeroMasViajes.Location = new System.Drawing.Point(629, 83);
+            this.btn_pasajeroMasViajes.Name = "btn_pasajeroMasViajes";
+            this.btn_pasajeroMasViajes.Size = new System.Drawing.Size(176, 34);
+            this.btn_pasajeroMasViajes.TabIndex = 12;
+            this.btn_pasajeroMasViajes.Text = "Pasajero con mas viajes";
+            this.btn_pasajeroMasViajes.UseVisualStyleBackColor = true;
+            this.btn_pasajeroMasViajes.Visible = false;
+            this.btn_pasajeroMasViajes.Click += new System.EventHandler(this.btn_pasajeroMasViejes_Click);
             // 
             // btn_Info
             // 
@@ -224,31 +233,101 @@ namespace Vista
             this.btn_Info.UseVisualStyleBackColor = false;
             this.btn_Info.Click += new System.EventHandler(this.btn_Info_Click);
             // 
+            // lbl_recaudacionTotal
+            // 
+            this.lbl_recaudacionTotal.AutoSize = true;
+            this.lbl_recaudacionTotal.Font = new System.Drawing.Font("Sigmar One", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_recaudacionTotal.ForeColor = System.Drawing.Color.Lime;
+            this.lbl_recaudacionTotal.Location = new System.Drawing.Point(26, 36);
+            this.lbl_recaudacionTotal.Name = "lbl_recaudacionTotal";
+            this.lbl_recaudacionTotal.Size = new System.Drawing.Size(0, 20);
+            this.lbl_recaudacionTotal.TabIndex = 25;
+            // 
+            // chb_wifi
+            // 
+            this.chb_wifi.AutoSize = true;
+            this.chb_wifi.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chb_wifi.ForeColor = System.Drawing.SystemColors.Control;
+            this.chb_wifi.Location = new System.Drawing.Point(91, 98);
+            this.chb_wifi.Name = "chb_wifi";
+            this.chb_wifi.Size = new System.Drawing.Size(47, 19);
+            this.chb_wifi.TabIndex = 26;
+            this.chb_wifi.Text = "Wifi";
+            this.chb_wifi.UseVisualStyleBackColor = true;
+            this.chb_wifi.CheckedChanged += new System.EventHandler(this.chb_wifi_CheckedChanged);
+            // 
+            // lbl_filtrar
+            // 
+            this.lbl_filtrar.AutoSize = true;
+            this.lbl_filtrar.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbl_filtrar.Location = new System.Drawing.Point(14, 99);
+            this.lbl_filtrar.Name = "lbl_filtrar";
+            this.lbl_filtrar.Size = new System.Drawing.Size(61, 15);
+            this.lbl_filtrar.TabIndex = 27;
+            this.lbl_filtrar.Text = "Filtrar por:";
+            // 
+            // chb_comida
+            // 
+            this.chb_comida.AutoSize = true;
+            this.chb_comida.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chb_comida.ForeColor = System.Drawing.SystemColors.Control;
+            this.chb_comida.Location = new System.Drawing.Point(162, 98);
+            this.chb_comida.Name = "chb_comida";
+            this.chb_comida.Size = new System.Drawing.Size(68, 19);
+            this.chb_comida.TabIndex = 28;
+            this.chb_comida.Text = "Comida";
+            this.chb_comida.UseVisualStyleBackColor = true;
+            this.chb_comida.CheckedChanged += new System.EventHandler(this.chb_comida_CheckedChanged);
+            // 
+            // lbl_recaudacionInternacional
+            // 
+            this.lbl_recaudacionInternacional.AutoSize = true;
+            this.lbl_recaudacionInternacional.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbl_recaudacionInternacional.Location = new System.Drawing.Point(279, 36);
+            this.lbl_recaudacionInternacional.Name = "lbl_recaudacionInternacional";
+            this.lbl_recaudacionInternacional.Size = new System.Drawing.Size(0, 15);
+            this.lbl_recaudacionInternacional.TabIndex = 29;
+            // 
+            // lbl_recaudacionCabotaje
+            // 
+            this.lbl_recaudacionCabotaje.AutoSize = true;
+            this.lbl_recaudacionCabotaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbl_recaudacionCabotaje.Location = new System.Drawing.Point(279, 64);
+            this.lbl_recaudacionCabotaje.Name = "lbl_recaudacionCabotaje";
+            this.lbl_recaudacionCabotaje.Size = new System.Drawing.Size(0, 15);
+            this.lbl_recaudacionCabotaje.TabIndex = 30;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(800, 522);
+            this.ClientSize = new System.Drawing.Size(817, 522);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_recaudacionCabotaje);
+            this.Controls.Add(this.lbl_recaudacionInternacional);
+            this.Controls.Add(this.chb_comida);
+            this.Controls.Add(this.lbl_filtrar);
+            this.Controls.Add(this.chb_wifi);
+            this.Controls.Add(this.lbl_recaudacionTotal);
             this.Controls.Add(this.btn_Info);
-            this.Controls.Add(this.btn_pasajeroMasViejes);
+            this.Controls.Add(this.btn_pasajeroMasViajes);
             this.Controls.Add(this.lbl_error);
-            this.Controls.Add(this.btn_vendedorMayorEdad);
+            this.Controls.Add(this.btn_vendedorMasPasajesVendidos);
             this.Controls.Add(this.dtg_infoGeneral);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.lbl_nombreUsuario);
             this.Controls.Add(this.lbl_fecha);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.mnt_MenuPricipal);
+            this.MainMenuStrip = this.mnt_MenuPricipal;
             this.MinimizeBox = false;
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mnt_MenuPricipal.ResumeLayout(false);
+            this.mnt_MenuPricipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_infoGeneral)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -258,22 +337,28 @@ namespace Vista
         #endregion
         private System.Windows.Forms.Label lbl_fecha;
         private System.Windows.Forms.Label lbl_nombreUsuario;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem vendedoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vuelosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem avionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem crearVueloToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem estadisticasToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip mnt_MenuPricipal;
+        private System.Windows.Forms.ToolStripMenuItem bmt_vendedores;
+        private System.Windows.Forms.ToolStripMenuItem bmt_vuelos;
+        private System.Windows.Forms.ToolStripMenuItem bmt_aviones;
+        private System.Windows.Forms.ToolStripMenuItem bmt_crearVuelo;
+        private System.Windows.Forms.ToolStripMenuItem bmt_estadisticas;
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.DataGridView dtg_infoGeneral;
-        private System.Windows.Forms.ToolStripMenuItem listaDeDestinosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listaDeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gananciasTotalesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aereonavesToolStripMenuItem;
-        private System.Windows.Forms.Button btn_vendedorMayorEdad;
+        private System.Windows.Forms.ToolStripMenuItem bmt_listaDestinos;
+        private System.Windows.Forms.ToolStripMenuItem bmt_listaPasajerosFrecuentes;
+        private System.Windows.Forms.ToolStripMenuItem bmt_gananciasTotales;
+        private System.Windows.Forms.ToolStripMenuItem bmt_listaAereonaves;
+        private System.Windows.Forms.Button btn_vendedorMasPasajesVendidos;
         private System.Windows.Forms.Label lbl_error;
-        private System.Windows.Forms.ToolStripMenuItem vendedoresToolStripMenuItem1;
-        private System.Windows.Forms.Button btn_pasajeroMasViejes;
+        private System.Windows.Forms.ToolStripMenuItem bmt_listaVendedores;
+        private System.Windows.Forms.Button btn_pasajeroMasViajes;
         private System.Windows.Forms.Button btn_Info;
+        private System.Windows.Forms.Label lbl_recaudacionTotal;
+        private System.Windows.Forms.CheckBox chb_wifi;
+        private System.Windows.Forms.Label lbl_filtrar;
+        private System.Windows.Forms.CheckBox chb_comida;
+        private System.Windows.Forms.Label lbl_recaudacionInternacional;
+        private System.Windows.Forms.Label lbl_recaudacionCabotaje;
     }
 }

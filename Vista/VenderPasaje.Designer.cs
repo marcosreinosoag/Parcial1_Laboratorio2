@@ -55,43 +55,32 @@ namespace Vista
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.gbx_equipajeMano = new System.Windows.Forms.GroupBox();
             this.btn_errorAncho0 = new System.Windows.Forms.Button();
-            this.btn_errorDescripcion0 = new System.Windows.Forms.Button();
             this.btn_errorAltura0 = new System.Windows.Forms.Button();
             this.btn_errorPeso0 = new System.Windows.Forms.Button();
-            this.btn_errorColor0 = new System.Windows.Forms.Button();
             this.txb_ancho0 = new System.Windows.Forms.TextBox();
             this.lbl_EquipajeMano = new System.Windows.Forms.Label();
-            this.txb_color0 = new System.Windows.Forms.TextBox();
             this.txb_peso0 = new System.Windows.Forms.TextBox();
             this.txb_altura0 = new System.Windows.Forms.TextBox();
-            this.txb_descripcion0 = new System.Windows.Forms.TextBox();
             this.bl_equipajeBodega = new System.Windows.Forms.Label();
-            this.txb_descripcion1 = new System.Windows.Forms.TextBox();
             this.txb_ancho1 = new System.Windows.Forms.TextBox();
             this.txb_altura1 = new System.Windows.Forms.TextBox();
             this.txb_peso1 = new System.Windows.Forms.TextBox();
-            this.txb_color1 = new System.Windows.Forms.TextBox();
             this.gbx_equipajeBodega1 = new System.Windows.Forms.GroupBox();
             this.btn_errorAltura1 = new System.Windows.Forms.Button();
-            this.btn_errorColor1 = new System.Windows.Forms.Button();
-            this.btn_errorDescripcion1 = new System.Windows.Forms.Button();
             this.btn_errorAncho1 = new System.Windows.Forms.Button();
             this.btn_errorPeso1 = new System.Windows.Forms.Button();
             this.gbx_equipajeBodega2 = new System.Windows.Forms.GroupBox();
             this.btn_errorAncho2 = new System.Windows.Forms.Button();
-            this.btn_errorDescripcion2 = new System.Windows.Forms.Button();
             this.btn_errorPeso2 = new System.Windows.Forms.Button();
             this.btn_errorAltura2 = new System.Windows.Forms.Button();
-            this.btn_errorColor2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.txb_descripcion2 = new System.Windows.Forms.TextBox();
-            this.txb_color2 = new System.Windows.Forms.TextBox();
             this.txb_ancho2 = new System.Windows.Forms.TextBox();
             this.txb_altura2 = new System.Windows.Forms.TextBox();
             this.txb_peso2 = new System.Windows.Forms.TextBox();
             this.btn_cargarEquipaje = new System.Windows.Forms.Button();
             this.lbx_pasajesCargados = new System.Windows.Forms.ListBox();
             this.btn_Info = new System.Windows.Forms.Button();
+            this.lbl_errorCantidadDeEquipaje = new System.Windows.Forms.Label();
             this.gbx_cargaPasajeros.SuspendLayout();
             this.gbx_equipajeMano.SuspendLayout();
             this.gbx_equipajeBodega1.SuspendLayout();
@@ -100,7 +89,7 @@ namespace Vista
             // 
             // btn_realizarPago
             // 
-            this.btn_realizarPago.Location = new System.Drawing.Point(634, 506);
+            this.btn_realizarPago.Location = new System.Drawing.Point(623, 444);
             this.btn_realizarPago.Name = "btn_realizarPago";
             this.btn_realizarPago.Size = new System.Drawing.Size(281, 29);
             this.btn_realizarPago.TabIndex = 3;
@@ -258,6 +247,8 @@ namespace Vista
             // chb_equipaje2Bodega
             // 
             this.chb_equipaje2Bodega.AutoSize = true;
+            this.chb_equipaje2Bodega.BackColor = System.Drawing.Color.Transparent;
+            this.chb_equipaje2Bodega.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.chb_equipaje2Bodega.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chb_equipaje2Bodega.ForeColor = System.Drawing.Color.White;
             this.chb_equipaje2Bodega.Location = new System.Drawing.Point(295, 109);
@@ -265,7 +256,7 @@ namespace Vista
             this.chb_equipaje2Bodega.Size = new System.Drawing.Size(123, 19);
             this.chb_equipaje2Bodega.TabIndex = 42;
             this.chb_equipaje2Bodega.Text = "Equipaje 2 Bodega";
-            this.chb_equipaje2Bodega.UseVisualStyleBackColor = true;
+            this.chb_equipaje2Bodega.UseVisualStyleBackColor = false;
             this.chb_equipaje2Bodega.Visible = false;
             this.chb_equipaje2Bodega.CheckedChanged += new System.EventHandler(this.chb_equipaje2Bodega_CheckedChanged);
             // 
@@ -282,6 +273,8 @@ namespace Vista
             // chb_equipaje1Bodega
             // 
             this.chb_equipaje1Bodega.AutoSize = true;
+            this.chb_equipaje1Bodega.BackColor = System.Drawing.Color.Transparent;
+            this.chb_equipaje1Bodega.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.chb_equipaje1Bodega.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chb_equipaje1Bodega.ForeColor = System.Drawing.Color.White;
             this.chb_equipaje1Bodega.Location = new System.Drawing.Point(149, 109);
@@ -289,12 +282,14 @@ namespace Vista
             this.chb_equipaje1Bodega.Size = new System.Drawing.Size(123, 19);
             this.chb_equipaje1Bodega.TabIndex = 40;
             this.chb_equipaje1Bodega.Text = "Equipaje 1 Bodega";
-            this.chb_equipaje1Bodega.UseVisualStyleBackColor = true;
+            this.chb_equipaje1Bodega.UseVisualStyleBackColor = false;
             this.chb_equipaje1Bodega.CheckedChanged += new System.EventHandler(this.chb_equipaje1Bodega_CheckedChanged);
             // 
             // chb_equipajeDeMano
             // 
             this.chb_equipajeDeMano.AutoSize = true;
+            this.chb_equipajeDeMano.BackColor = System.Drawing.Color.Transparent;
+            this.chb_equipajeDeMano.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.chb_equipajeDeMano.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chb_equipajeDeMano.ForeColor = System.Drawing.Color.White;
             this.chb_equipajeDeMano.Location = new System.Drawing.Point(6, 109);
@@ -302,7 +297,7 @@ namespace Vista
             this.chb_equipajeDeMano.Size = new System.Drawing.Size(121, 19);
             this.chb_equipajeDeMano.TabIndex = 39;
             this.chb_equipajeDeMano.Text = "Equipaje de Mano";
-            this.chb_equipajeDeMano.UseVisualStyleBackColor = true;
+            this.chb_equipajeDeMano.UseVisualStyleBackColor = false;
             this.chb_equipajeDeMano.CheckedChanged += new System.EventHandler(this.chb_equipajeDeMano_CheckedChanged);
             // 
             // btn_errorFechaNacimiento
@@ -367,16 +362,16 @@ namespace Vista
             this.btn_cargarPasajero.Name = "btn_cargarPasajero";
             this.btn_cargarPasajero.Size = new System.Drawing.Size(102, 22);
             this.btn_cargarPasajero.TabIndex = 34;
-            this.btn_cargarPasajero.Text = "CargarPasajero";
+            this.btn_cargarPasajero.Text = "Cargar Pasajero";
             this.btn_cargarPasajero.UseVisualStyleBackColor = true;
             this.btn_cargarPasajero.Visible = false;
             this.btn_cargarPasajero.Click += new System.EventHandler(this.btn_cargarPasajero_Click);
             // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(12, 506);
+            this.btn_cancelar.Location = new System.Drawing.Point(47, 444);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(173, 29);
+            this.btn_cancelar.Size = new System.Drawing.Size(243, 29);
             this.btn_cancelar.TabIndex = 35;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
@@ -385,19 +380,15 @@ namespace Vista
             // gbx_equipajeMano
             // 
             this.gbx_equipajeMano.Controls.Add(this.btn_errorAncho0);
-            this.gbx_equipajeMano.Controls.Add(this.btn_errorDescripcion0);
             this.gbx_equipajeMano.Controls.Add(this.btn_errorAltura0);
             this.gbx_equipajeMano.Controls.Add(this.btn_errorPeso0);
-            this.gbx_equipajeMano.Controls.Add(this.btn_errorColor0);
             this.gbx_equipajeMano.Controls.Add(this.txb_ancho0);
             this.gbx_equipajeMano.Controls.Add(this.lbl_EquipajeMano);
-            this.gbx_equipajeMano.Controls.Add(this.txb_color0);
             this.gbx_equipajeMano.Controls.Add(this.txb_peso0);
             this.gbx_equipajeMano.Controls.Add(this.txb_altura0);
-            this.gbx_equipajeMano.Controls.Add(this.txb_descripcion0);
             this.gbx_equipajeMano.Location = new System.Drawing.Point(456, 2);
             this.gbx_equipajeMano.Name = "gbx_equipajeMano";
-            this.gbx_equipajeMano.Size = new System.Drawing.Size(468, 121);
+            this.gbx_equipajeMano.Size = new System.Drawing.Size(468, 89);
             this.gbx_equipajeMano.TabIndex = 36;
             this.gbx_equipajeMano.TabStop = false;
             this.gbx_equipajeMano.Visible = false;
@@ -415,20 +406,6 @@ namespace Vista
             this.btn_errorAncho0.UseVisualStyleBackColor = false;
             this.btn_errorAncho0.Visible = false;
             this.btn_errorAncho0.MouseHover += new System.EventHandler(this.btn_errorAncho0_MouseHover);
-            // 
-            // btn_errorDescripcion0
-            // 
-            this.btn_errorDescripcion0.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_errorDescripcion0.BackColor = System.Drawing.Color.Black;
-            this.btn_errorDescripcion0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_errorDescripcion0.Image = ((System.Drawing.Image)(resources.GetObject("btn_errorDescripcion0.Image")));
-            this.btn_errorDescripcion0.Location = new System.Drawing.Point(412, 71);
-            this.btn_errorDescripcion0.Name = "btn_errorDescripcion0";
-            this.btn_errorDescripcion0.Size = new System.Drawing.Size(25, 28);
-            this.btn_errorDescripcion0.TabIndex = 55;
-            this.btn_errorDescripcion0.UseVisualStyleBackColor = false;
-            this.btn_errorDescripcion0.Visible = false;
-            this.btn_errorDescripcion0.MouseHover += new System.EventHandler(this.btn_errorDescripcion1_MouseHover);
             // 
             // btn_errorAltura0
             // 
@@ -458,20 +435,6 @@ namespace Vista
             this.btn_errorPeso0.Visible = false;
             this.btn_errorPeso0.MouseHover += new System.EventHandler(this.btn_errorPeso0_MouseHover);
             // 
-            // btn_errorColor0
-            // 
-            this.btn_errorColor0.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_errorColor0.BackColor = System.Drawing.Color.Black;
-            this.btn_errorColor0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_errorColor0.Image = ((System.Drawing.Image)(resources.GetObject("btn_errorColor0.Image")));
-            this.btn_errorColor0.Location = new System.Drawing.Point(156, 72);
-            this.btn_errorColor0.Name = "btn_errorColor0";
-            this.btn_errorColor0.Size = new System.Drawing.Size(25, 28);
-            this.btn_errorColor0.TabIndex = 42;
-            this.btn_errorColor0.UseVisualStyleBackColor = false;
-            this.btn_errorColor0.Visible = false;
-            this.btn_errorColor0.MouseHover += new System.EventHandler(this.btn_errorColor0_MouseHover);
-            // 
             // txb_ancho0
             // 
             this.txb_ancho0.Location = new System.Drawing.Point(289, 38);
@@ -491,14 +454,6 @@ namespace Vista
             this.lbl_EquipajeMano.TabIndex = 47;
             this.lbl_EquipajeMano.Text = "Equipaje De Mano";
             // 
-            // txb_color0
-            // 
-            this.txb_color0.Location = new System.Drawing.Point(14, 76);
-            this.txb_color0.Name = "txb_color0";
-            this.txb_color0.PlaceholderText = "Ingrese Color";
-            this.txb_color0.Size = new System.Drawing.Size(136, 23);
-            this.txb_color0.TabIndex = 37;
-            // 
             // txb_peso0
             // 
             this.txb_peso0.Location = new System.Drawing.Point(14, 38);
@@ -515,14 +470,6 @@ namespace Vista
             this.txb_altura0.Size = new System.Drawing.Size(95, 23);
             this.txb_altura0.TabIndex = 38;
             // 
-            // txb_descripcion0
-            // 
-            this.txb_descripcion0.Location = new System.Drawing.Point(187, 76);
-            this.txb_descripcion0.Name = "txb_descripcion0";
-            this.txb_descripcion0.PlaceholderText = "Ingrese Descripcion";
-            this.txb_descripcion0.Size = new System.Drawing.Size(219, 23);
-            this.txb_descripcion0.TabIndex = 41;
-            // 
             // bl_equipajeBodega
             // 
             this.bl_equipajeBodega.AutoSize = true;
@@ -533,14 +480,6 @@ namespace Vista
             this.bl_equipajeBodega.Size = new System.Drawing.Size(141, 20);
             this.bl_equipajeBodega.TabIndex = 48;
             this.bl_equipajeBodega.Text = "Equipaje 1 Bodega";
-            // 
-            // txb_descripcion1
-            // 
-            this.txb_descripcion1.Location = new System.Drawing.Point(188, 77);
-            this.txb_descripcion1.Name = "txb_descripcion1";
-            this.txb_descripcion1.PlaceholderText = "Ingrese Descripcion";
-            this.txb_descripcion1.Size = new System.Drawing.Size(219, 23);
-            this.txb_descripcion1.TabIndex = 46;
             // 
             // txb_ancho1
             // 
@@ -566,30 +505,18 @@ namespace Vista
             this.txb_peso1.Size = new System.Drawing.Size(94, 23);
             this.txb_peso1.TabIndex = 43;
             // 
-            // txb_color1
-            // 
-            this.txb_color1.Location = new System.Drawing.Point(13, 76);
-            this.txb_color1.Name = "txb_color1";
-            this.txb_color1.PlaceholderText = "Ingrese Color";
-            this.txb_color1.Size = new System.Drawing.Size(137, 23);
-            this.txb_color1.TabIndex = 42;
-            // 
             // gbx_equipajeBodega1
             // 
             this.gbx_equipajeBodega1.Controls.Add(this.bl_equipajeBodega);
-            this.gbx_equipajeBodega1.Controls.Add(this.txb_descripcion1);
             this.gbx_equipajeBodega1.Controls.Add(this.btn_errorAltura1);
-            this.gbx_equipajeBodega1.Controls.Add(this.btn_errorColor1);
-            this.gbx_equipajeBodega1.Controls.Add(this.btn_errorDescripcion1);
             this.gbx_equipajeBodega1.Controls.Add(this.btn_errorAncho1);
             this.gbx_equipajeBodega1.Controls.Add(this.btn_errorPeso1);
             this.gbx_equipajeBodega1.Controls.Add(this.txb_ancho1);
             this.gbx_equipajeBodega1.Controls.Add(this.txb_altura1);
             this.gbx_equipajeBodega1.Controls.Add(this.txb_peso1);
-            this.gbx_equipajeBodega1.Controls.Add(this.txb_color1);
-            this.gbx_equipajeBodega1.Location = new System.Drawing.Point(456, 129);
+            this.gbx_equipajeBodega1.Location = new System.Drawing.Point(456, 97);
             this.gbx_equipajeBodega1.Name = "gbx_equipajeBodega1";
-            this.gbx_equipajeBodega1.Size = new System.Drawing.Size(468, 123);
+            this.gbx_equipajeBodega1.Size = new System.Drawing.Size(468, 83);
             this.gbx_equipajeBodega1.TabIndex = 49;
             this.gbx_equipajeBodega1.TabStop = false;
             this.gbx_equipajeBodega1.Visible = false;
@@ -607,34 +534,6 @@ namespace Vista
             this.btn_errorAltura1.UseVisualStyleBackColor = false;
             this.btn_errorAltura1.Visible = false;
             this.btn_errorAltura1.MouseHover += new System.EventHandler(this.btn_errorAltura0_MouseHover);
-            // 
-            // btn_errorColor1
-            // 
-            this.btn_errorColor1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_errorColor1.BackColor = System.Drawing.Color.Black;
-            this.btn_errorColor1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_errorColor1.Image = ((System.Drawing.Image)(resources.GetObject("btn_errorColor1.Image")));
-            this.btn_errorColor1.Location = new System.Drawing.Point(157, 73);
-            this.btn_errorColor1.Name = "btn_errorColor1";
-            this.btn_errorColor1.Size = new System.Drawing.Size(25, 28);
-            this.btn_errorColor1.TabIndex = 51;
-            this.btn_errorColor1.UseVisualStyleBackColor = false;
-            this.btn_errorColor1.Visible = false;
-            this.btn_errorColor1.MouseHover += new System.EventHandler(this.btn_errorColor0_MouseHover);
-            // 
-            // btn_errorDescripcion1
-            // 
-            this.btn_errorDescripcion1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_errorDescripcion1.BackColor = System.Drawing.Color.Black;
-            this.btn_errorDescripcion1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_errorDescripcion1.Image = ((System.Drawing.Image)(resources.GetObject("btn_errorDescripcion1.Image")));
-            this.btn_errorDescripcion1.Location = new System.Drawing.Point(413, 73);
-            this.btn_errorDescripcion1.Name = "btn_errorDescripcion1";
-            this.btn_errorDescripcion1.Size = new System.Drawing.Size(25, 28);
-            this.btn_errorDescripcion1.TabIndex = 52;
-            this.btn_errorDescripcion1.UseVisualStyleBackColor = false;
-            this.btn_errorDescripcion1.Visible = false;
-            this.btn_errorDescripcion1.MouseHover += new System.EventHandler(this.btn_errorDescripcion1_MouseHover);
             // 
             // btn_errorAncho1
             // 
@@ -667,19 +566,15 @@ namespace Vista
             // gbx_equipajeBodega2
             // 
             this.gbx_equipajeBodega2.Controls.Add(this.btn_errorAncho2);
-            this.gbx_equipajeBodega2.Controls.Add(this.btn_errorDescripcion2);
             this.gbx_equipajeBodega2.Controls.Add(this.btn_errorPeso2);
             this.gbx_equipajeBodega2.Controls.Add(this.btn_errorAltura2);
-            this.gbx_equipajeBodega2.Controls.Add(this.btn_errorColor2);
             this.gbx_equipajeBodega2.Controls.Add(this.label4);
-            this.gbx_equipajeBodega2.Controls.Add(this.txb_descripcion2);
-            this.gbx_equipajeBodega2.Controls.Add(this.txb_color2);
             this.gbx_equipajeBodega2.Controls.Add(this.txb_ancho2);
             this.gbx_equipajeBodega2.Controls.Add(this.txb_altura2);
             this.gbx_equipajeBodega2.Controls.Add(this.txb_peso2);
-            this.gbx_equipajeBodega2.Location = new System.Drawing.Point(456, 258);
+            this.gbx_equipajeBodega2.Location = new System.Drawing.Point(456, 183);
             this.gbx_equipajeBodega2.Name = "gbx_equipajeBodega2";
-            this.gbx_equipajeBodega2.Size = new System.Drawing.Size(468, 121);
+            this.gbx_equipajeBodega2.Size = new System.Drawing.Size(468, 87);
             this.gbx_equipajeBodega2.TabIndex = 55;
             this.gbx_equipajeBodega2.TabStop = false;
             this.gbx_equipajeBodega2.Visible = false;
@@ -697,20 +592,6 @@ namespace Vista
             this.btn_errorAncho2.UseVisualStyleBackColor = false;
             this.btn_errorAncho2.Visible = false;
             this.btn_errorAncho2.MouseHover += new System.EventHandler(this.btn_errorAncho0_MouseHover);
-            // 
-            // btn_errorDescripcion2
-            // 
-            this.btn_errorDescripcion2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_errorDescripcion2.BackColor = System.Drawing.Color.Black;
-            this.btn_errorDescripcion2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_errorDescripcion2.Image = ((System.Drawing.Image)(resources.GetObject("btn_errorDescripcion2.Image")));
-            this.btn_errorDescripcion2.Location = new System.Drawing.Point(413, 80);
-            this.btn_errorDescripcion2.Name = "btn_errorDescripcion2";
-            this.btn_errorDescripcion2.Size = new System.Drawing.Size(25, 28);
-            this.btn_errorDescripcion2.TabIndex = 58;
-            this.btn_errorDescripcion2.UseVisualStyleBackColor = false;
-            this.btn_errorDescripcion2.Visible = false;
-            this.btn_errorDescripcion2.MouseHover += new System.EventHandler(this.btn_errorDescripcion1_MouseHover);
             // 
             // btn_errorPeso2
             // 
@@ -740,47 +621,17 @@ namespace Vista
             this.btn_errorAltura2.Visible = false;
             this.btn_errorAltura2.MouseHover += new System.EventHandler(this.btn_errorAltura0_MouseHover);
             // 
-            // btn_errorColor2
-            // 
-            this.btn_errorColor2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_errorColor2.BackColor = System.Drawing.Color.Black;
-            this.btn_errorColor2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_errorColor2.Image = ((System.Drawing.Image)(resources.GetObject("btn_errorColor2.Image")));
-            this.btn_errorColor2.Location = new System.Drawing.Point(156, 82);
-            this.btn_errorColor2.Name = "btn_errorColor2";
-            this.btn_errorColor2.Size = new System.Drawing.Size(25, 28);
-            this.btn_errorColor2.TabIndex = 56;
-            this.btn_errorColor2.UseVisualStyleBackColor = false;
-            this.btn_errorColor2.Visible = false;
-            this.btn_errorColor2.MouseHover += new System.EventHandler(this.btn_errorColor0_MouseHover);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Cursor = System.Windows.Forms.Cursors.Default;
             this.label4.Font = new System.Drawing.Font("Sigmar One", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(167, 12);
+            this.label4.Location = new System.Drawing.Point(167, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Equipaje 2 Bodega";
-            // 
-            // txb_descripcion2
-            // 
-            this.txb_descripcion2.Location = new System.Drawing.Point(187, 86);
-            this.txb_descripcion2.Name = "txb_descripcion2";
-            this.txb_descripcion2.PlaceholderText = "Ingrese Descripcion";
-            this.txb_descripcion2.Size = new System.Drawing.Size(219, 23);
-            this.txb_descripcion2.TabIndex = 4;
-            // 
-            // txb_color2
-            // 
-            this.txb_color2.Location = new System.Drawing.Point(14, 86);
-            this.txb_color2.Name = "txb_color2";
-            this.txb_color2.PlaceholderText = "Ingrese Color";
-            this.txb_color2.Size = new System.Drawing.Size(137, 23);
-            this.txb_color2.TabIndex = 3;
             // 
             // txb_ancho2
             // 
@@ -808,22 +659,21 @@ namespace Vista
             // 
             // btn_cargarEquipaje
             // 
-            this.btn_cargarEquipaje.Location = new System.Drawing.Point(601, 385);
+            this.btn_cargarEquipaje.Location = new System.Drawing.Point(613, 276);
             this.btn_cargarEquipaje.Name = "btn_cargarEquipaje";
-            this.btn_cargarEquipaje.Size = new System.Drawing.Size(202, 23);
-            this.btn_cargarEquipaje.TabIndex = 56;
+            this.btn_cargarEquipaje.Size = new System.Drawing.Size(188, 23);
+            this.btn_cargarEquipaje.TabIndex = 58;
             this.btn_cargarEquipaje.Text = "Cargar Equipaje";
             this.btn_cargarEquipaje.UseVisualStyleBackColor = true;
-            this.btn_cargarEquipaje.Visible = false;
-            this.btn_cargarEquipaje.Click += new System.EventHandler(this.btn_cargarEquipaje_Click);
+            this.btn_cargarEquipaje.Click += new System.EventHandler(this.btn_cargarEquipaje_Click_1);
             // 
             // lbx_pasajesCargados
             // 
             this.lbx_pasajesCargados.FormattingEnabled = true;
             this.lbx_pasajesCargados.ItemHeight = 15;
-            this.lbx_pasajesCargados.Location = new System.Drawing.Point(12, 396);
+            this.lbx_pasajesCargados.Location = new System.Drawing.Point(456, 332);
             this.lbx_pasajesCargados.Name = "lbx_pasajesCargados";
-            this.lbx_pasajesCargados.Size = new System.Drawing.Size(542, 94);
+            this.lbx_pasajesCargados.Size = new System.Drawing.Size(468, 94);
             this.lbx_pasajesCargados.TabIndex = 57;
             // 
             // btn_Info
@@ -833,12 +683,21 @@ namespace Vista
             this.btn_Info.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Info.BackgroundImage")));
             this.btn_Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_Info.Location = new System.Drawing.Point(880, 396);
+            this.btn_Info.Location = new System.Drawing.Point(439, 444);
             this.btn_Info.Name = "btn_Info";
             this.btn_Info.Size = new System.Drawing.Size(35, 35);
             this.btn_Info.TabIndex = 58;
             this.btn_Info.UseVisualStyleBackColor = false;
             this.btn_Info.Click += new System.EventHandler(this.btn_Info_Click);
+            // 
+            // lbl_errorCantidadDeEquipaje
+            // 
+            this.lbl_errorCantidadDeEquipaje.AutoSize = true;
+            this.lbl_errorCantidadDeEquipaje.ForeColor = System.Drawing.Color.Red;
+            this.lbl_errorCantidadDeEquipaje.Location = new System.Drawing.Point(691, 314);
+            this.lbl_errorCantidadDeEquipaje.Name = "lbl_errorCantidadDeEquipaje";
+            this.lbl_errorCantidadDeEquipaje.Size = new System.Drawing.Size(0, 15);
+            this.lbl_errorCantidadDeEquipaje.TabIndex = 59;
             // 
             // VenderPasaje
             // 
@@ -846,11 +705,12 @@ namespace Vista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(927, 552);
+            this.ClientSize = new System.Drawing.Size(927, 491);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_errorCantidadDeEquipaje);
+            this.Controls.Add(this.btn_cargarEquipaje);
             this.Controls.Add(this.btn_Info);
             this.Controls.Add(this.lbx_pasajesCargados);
-            this.Controls.Add(this.btn_cargarEquipaje);
             this.Controls.Add(this.gbx_equipajeBodega2);
             this.Controls.Add(this.gbx_equipajeBodega1);
             this.Controls.Add(this.gbx_equipajeMano);
@@ -858,6 +718,8 @@ namespace Vista
             this.Controls.Add(this.btn_realizarPago);
             this.Controls.Add(this.btn_cancelar);
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "VenderPasaje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vuelo";
@@ -871,6 +733,7 @@ namespace Vista
             this.gbx_equipajeBodega2.ResumeLayout(false);
             this.gbx_equipajeBodega2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -898,44 +761,33 @@ namespace Vista
         private System.Windows.Forms.GroupBox gbx_equipajeMano;
         private System.Windows.Forms.TextBox txb_ancho0;
         private System.Windows.Forms.Label lbl_EquipajeMano;
-        private System.Windows.Forms.TextBox txb_color0;
         private System.Windows.Forms.TextBox txb_peso0;
         private System.Windows.Forms.TextBox txb_altura0;
-        private System.Windows.Forms.TextBox txb_descripcion0;
         private System.Windows.Forms.Label bl_equipajeBodega;
-        private System.Windows.Forms.TextBox txb_descripcion1;
         private System.Windows.Forms.TextBox txb_ancho1;
         private System.Windows.Forms.TextBox txb_altura1;
         private System.Windows.Forms.TextBox txb_peso1;
-        private System.Windows.Forms.TextBox txb_color1;
         private System.Windows.Forms.GroupBox gbx_equipajeBodega1;
         private System.Windows.Forms.Button btn_errorPeso0;
-        private System.Windows.Forms.Button btn_errorColor0;
         private System.Windows.Forms.Button btn_errorAncho0;
-        private System.Windows.Forms.Button btn_errorDescripcion0;
         private System.Windows.Forms.Button btn_errorAltura0;
         private System.Windows.Forms.Button btn_errorAltura1;
-        private System.Windows.Forms.Button btn_errorColor1;
-        private System.Windows.Forms.Button btn_errorDescripcion1;
         private System.Windows.Forms.Button btn_errorAncho1;
         private System.Windows.Forms.Button btn_errorPeso1;
         private System.Windows.Forms.GroupBox gbx_equipajeBodega2;
         private System.Windows.Forms.CheckBox chb_equipaje2Bodega;
         private System.Windows.Forms.Button btn_errorAncho2;
-        private System.Windows.Forms.Button btn_errorDescripcion2;
         private System.Windows.Forms.Button btn_errorPeso2;
         private System.Windows.Forms.Button btn_errorAltura2;
-        private System.Windows.Forms.Button btn_errorColor2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txb_descripcion2;
-        private System.Windows.Forms.TextBox txb_color2;
         private System.Windows.Forms.TextBox txb_ancho2;
         private System.Windows.Forms.TextBox txb_altura2;
         private System.Windows.Forms.TextBox txb_peso2;
-        private System.Windows.Forms.Button btn_cargarEquipaje;
         private System.Windows.Forms.Label lbl_error;
         private System.Windows.Forms.ListBox lbx_pasajesCargados;
         private System.Windows.Forms.Button btn_buscarPasajero;
         private System.Windows.Forms.Button btn_Info;
+        private System.Windows.Forms.Button btn_cargarEquipaje;
+        private System.Windows.Forms.Label lbl_errorCantidadDeEquipaje;
     }
 }

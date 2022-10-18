@@ -40,8 +40,8 @@ namespace Vista
             this.rdb_tajetaDeDebito = new System.Windows.Forms.RadioButton();
             this.rdb_tarjetaDeCredito = new System.Windows.Forms.RadioButton();
             this.rdb_efectivo = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_medioDePago = new System.Windows.Forms.Label();
+            this.lbl_total = new System.Windows.Forms.Label();
             this.txb_totalCuenta = new System.Windows.Forms.TextBox();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_aceptar = new System.Windows.Forms.Button();
@@ -149,25 +149,25 @@ namespace Vista
             this.rdb_efectivo.UseVisualStyleBackColor = true;
             this.rdb_efectivo.CheckedChanged += new System.EventHandler(this.rdb_efectivo_CheckedChanged);
             // 
-            // label2
+            // lbl_medioDePago
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(221, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 17);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Ingrese medio de pago:";
+            this.lbl_medioDePago.AutoSize = true;
+            this.lbl_medioDePago.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lbl_medioDePago.Location = new System.Drawing.Point(221, 91);
+            this.lbl_medioDePago.Name = "lbl_medioDePago";
+            this.lbl_medioDePago.Size = new System.Drawing.Size(144, 17);
+            this.lbl_medioDePago.TabIndex = 20;
+            this.lbl_medioDePago.Text = "Ingrese medio de pago:";
             // 
-            // label1
+            // lbl_total
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(258, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 25);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Total";
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_total.Location = new System.Drawing.Point(258, 19);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(55, 25);
+            this.lbl_total.TabIndex = 19;
+            this.lbl_total.Text = "Total";
             // 
             // txb_totalCuenta
             // 
@@ -230,8 +230,8 @@ namespace Vista
             this.Controls.Add(this.rdb_tajetaDeDebito);
             this.Controls.Add(this.rdb_tarjetaDeCredito);
             this.Controls.Add(this.rdb_efectivo);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_medioDePago);
+            this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.txb_totalCuenta);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_aceptar);
@@ -256,8 +256,8 @@ namespace Vista
         private System.Windows.Forms.RadioButton rdb_tajetaDeDebito;
         private System.Windows.Forms.RadioButton rdb_tarjetaDeCredito;
         private System.Windows.Forms.RadioButton rdb_efectivo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_medioDePago;
+        private System.Windows.Forms.Label lbl_total;
         private System.Windows.Forms.TextBox txb_totalCuenta;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_aceptar;

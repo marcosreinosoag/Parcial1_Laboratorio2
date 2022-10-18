@@ -10,11 +10,13 @@ namespace Entidades
     {
         string usuario;
         string clave;
+        int cantidadDePasajesVendidos;
 
-        public Vendedor(string dni, string clave, string nombre, string apellido, DateTime fechaNacimiento) : base(dni, nombre, apellido, fechaNacimiento)
+        public Vendedor(string dni, string clave, string nombre, string apellido, DateTime fechaNacimiento,int pasajesVendidos) : base(dni, nombre, apellido, fechaNacimiento)
         {
             this.usuario = dni;
             this.clave = clave;
+            this.cantidadDePasajesVendidos = pasajesVendidos;
         }
         public string Usuario
         {
@@ -29,9 +31,15 @@ namespace Entidades
             }
             return retorno;
         }
+        public int CantidadDePasajesVendidos
+        {
+            get { return cantidadDePasajesVendidos; }
+            set { this.cantidadDePasajesVendidos += value; }
+        }
         public override string MostrarDatos()
         {
-            return this.ToString();
+            string datos = $" El vendedor {this.Nombre} {this.Apellido} tiene {this.CantidadDePasajesVendidos} pasajes vendidos.";
+            return datos;
         }
         public override string ToString()
         {
@@ -49,7 +57,7 @@ namespace Entidades
         }
         public override int GetHashCode()
         {
-            return (usuario,clave).GetHashCode();
+            return (usuario, clave).GetHashCode();
         }
     }
 }
